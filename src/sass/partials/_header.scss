@@ -1,0 +1,48 @@
+.march-header {
+    position: relative;
+    background-image: url('@@assetPath@@/assets/images/background.png');
+    background-position: center center;
+
+    .gs-container {
+        height: 100%;
+    }
+}
+
+.march-header__content {
+    position: relative;
+    margin-left: 140px;
+    width: 620px;
+    height: 550px;
+}
+
+.march-header__title {
+    font-family: 'Guardian Egyptian Web';
+    font-weight: 900;
+    color: $c-orange;
+    font-size: 72px;
+    line-height: 1;
+    padding-top: 12px;
+}
+
+.march-header__content-bottom {
+    position: absolute;
+    bottom: 12px;
+    width: 620px;
+}
+
+.march-header__intro {
+    font-family: 'Guardian Egyptian Web';
+    font-size: 16px;
+    line-height: 24px;
+    color: $c-white;
+}
+
+.march-header__print-button {
+    font-family: 'Guardian Sans Web';
+    font-size: 16px;
+    color: $c-black;
+    background-color: $c-orange;
+    border-radius: 19px;
+    padding: 8px 40px 8px 12px;
+    display: inline-block;
+}
