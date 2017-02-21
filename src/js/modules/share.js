@@ -9,19 +9,9 @@ module.exports =  {
     },
 
     setLinks: function() {
-        $('.trump-tracker-header__share-link--twitter').attr('href', this.getTwitterLink());
-        $('.trump-tracker-header__share-link--facebook').attr('href', this.getFacebookLink());
-        $('.trump-tracker-header__share-link--email').attr('href', this.getEmailLink());
-    },
-
-    setDayLinks: function() {
-        $('.trump-tracker__day').each(function(index, e) {
-            // the #day-0 needs to be added
-            
-            $(e).find('.trump-tracker__day-share-button--twitter').attr('href', this.getTwitterLink($(e).attr('id')));
-            $(e).find('.trump-tracker__day-share-button--facebook').attr('href', this.getFacebookLink($(e).attr('id')));
-            $(e).find('.trump-tracker__day-share-button--email').attr('href', this.getEmailLink($(e).attr('id')));
-        }.bind(this));
+        $('.march-share__button--twitter a').attr('href', this.getTwitterLink());
+        $('.march-share__button--facebook a').attr('href', this.getFacebookLink());
+        $('.march-share__button--email a').attr('href', this.getEmailLink());
     },
 
     getTwitterLink: function(id) {
