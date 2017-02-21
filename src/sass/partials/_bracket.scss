@@ -24,13 +24,16 @@
     }
 }
 
-.march-bracket__top,
-.march-bracket__bottom {
-    overflow: auto;
+.march-bracket--middle {
+    background-color: $c-white;
 }
 
 .march-bracket__matchup {
     margin-bottom: 24px;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
 }
 
 .march-bracket__team {
@@ -42,9 +45,12 @@
     font-family: 'Guardian Sans Web';
     font-size: 16px;
     line-height: 1.2;
-    margin-bottom: 10px;
     box-sizing: border-box;
     height: 22px;
+
+    &:first-of-type {
+        margin-bottom: 10px;
+    }
 }
 
 .march-bracket__logo {
