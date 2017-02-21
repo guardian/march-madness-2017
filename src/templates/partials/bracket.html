@@ -1,5 +1,7 @@
 <div class='march-bracket march-bracket--top'>
     <div class='gs-container'>
+        <h2 class='march-bracket__label march-bracket__label--east'>East</h2>
+        <h2 class='march-bracket__label march-bracket__label--midwest'>Midwest</h2>
         <div class='march-round march-round--first' data-round='1' data-region='east'>
             {{#each East}}
                 {{> templates/partials/matchup index=@index team=@this}}
@@ -50,6 +52,8 @@
 </div>
 <div class='march-bracket march-bracket--bottom'>
     <div class='gs-container'>
+        <h2 class='march-bracket__label march-bracket__label--south'>South</h2>
+        <h2 class='march-bracket__label march-bracket__label--west'>West</h2>
         <div class='march-round march-round--first' data-round='1' data-region='south'>
             {{#each South}}
                 {{> templates/partials/matchup index=@index team=@this}}

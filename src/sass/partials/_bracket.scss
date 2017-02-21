@@ -151,6 +151,24 @@
     }
 }
 
+.march-bracket__label {
+    position: absolute;
+    left: 250px;
+    top: 290px;
+    z-index: 10;
+    font-family: 'Guardian Egyptian Web';
+    font-size: 38px;
+    font-weight: 900;
+    width: 160px;
+    text-align: center;
+}
+
+.march-bracket__label--midwest,
+.march-bracket__label--west {
+    left: auto;
+    right: 250px;
+}
+
 .march-bracket__matchup {
     margin-bottom: 24px;
     position: relative;
