@@ -13,25 +13,6 @@
         display: flex;
     }
 
-    .march-round {
-        padding: 4px 10px 12px 10px;
-        width: 140px;
-        // flex-grow: 1;
-        float: left;
-
-        strong {
-            display: block;
-        }
-    }
-
-    .march-round:first-of-type {
-        padding-left: 20px;
-    }
-
-    .march-round:last-of-type {
-        padding-right: 20px;
-    }
-
     .march-round--second {
         background-color: lighten($c-black, 10%);
     }
@@ -43,4 +24,23 @@
     .march-round--regional-finals {
         background-color: lighten($c-black, 30%);
     }
+}
+
+.march-round {
+    padding: 4px 10px 12px 10px;
+    width: 140px;
+    // flex-grow: 1;
+    float: left;
+
+    strong {
+        display: block;
+    }
+}
+
+.march-round:first-of-type {
+    padding-left: 20px;
+}
+
+.march-round:last-of-type {
+    padding-right: 20px;
 }

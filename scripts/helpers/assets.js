@@ -39,7 +39,7 @@ module.exports = {
         console.log('updated css!');
     },
 
-    html: function(path, absolutePath) {
+    html: function(path, absolutePath, data) {
         fs.removeSync(path + '/main.html');
 
         handlebars.registerHelper('if_eq', function(a, b, opts) {
@@ -59,7 +59,7 @@ module.exports = {
             template_extensions: ['html', 'svg']
         });
 
-        fs.writeFileSync(path + '/main.html', template().replace(/@@assetPath@@/g, absolutePath));
+        fs.writeFileSync(path + '/main.html', template(data).replace(/@@assetPath@@/g, absolutePath));
         console.log('updated html!');
     },
 
