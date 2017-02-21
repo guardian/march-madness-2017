@@ -57,6 +57,12 @@
     }
 }
 
+.march-header__cutout {
+    position: absolute;
+    right: -350px;
+    bottom: 0;
+}
+
 .march-header {
     .march-share {
         float: right;
