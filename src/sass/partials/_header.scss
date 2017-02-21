@@ -28,13 +28,15 @@
     position: absolute;
     bottom: 12px;
     width: 620px;
+    overflow: auto;
 }
 
 .march-header__intro {
     font-family: 'Guardian Egyptian Web';
-    font-size: 16px;
+    font-size: 20px;
     line-height: 24px;
     color: $c-white;
+    margin-bottom: 12px;
 }
 
 .march-header__print-button {
@@ -42,7 +44,27 @@
     font-size: 16px;
     color: $c-black;
     background-color: $c-orange;
+    background-image: url('@@assetPath@@/assets/images/arrow-right.svg');
+    background-repeat: no-repeat;
+    background-position: right 4px center;
     border-radius: 19px;
     padding: 8px 40px 8px 12px;
     display: inline-block;
+
+    &:hover {
+        text-decoration: none;
+        background-color: darken($c-orange, 5%);
+    }
+}
+
+.march-header {
+    .march-share {
+        float: right;
+    }
+
+    .march-share__button {
+        height: 40px;
+        width: 40px;
+        border-radius: 20px;
+    }
 }
