@@ -79,6 +79,10 @@ module.exports = {
          }
         });
 
+        handlebars.registerHelper('match-number', function(index) {
+            return (index + 2) / 2;
+        });
+
         var html = fs.readFileSync('src/templates/main.html', 'utf8');
         var template = handlebars.compile(html);
 
