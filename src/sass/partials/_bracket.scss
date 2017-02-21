@@ -168,7 +168,7 @@
     position: relative;
     border: 1px solid darken($c-grey, 5%);
     border-top: 0;
-    padding: 0 2px 2px 2px;
+    padding: 2px;
     width: 100%;
     font-family: 'Guardian Sans Web';
     font-size: 16px;
@@ -181,7 +181,7 @@
     }
 
     &.is-winner {
-        background-color: $c-orange;
+        background-color: darken($c-grey, 5%);
     }
 }
 
@@ -206,6 +206,6 @@
 .march-bracket__seed {
     position: absolute;
     right: 2px;
-    bottom: 2px;
+    bottom: 0px;
     color: lighten($c-black, 40%);
 }
