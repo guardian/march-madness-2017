@@ -13,10 +13,18 @@
 
     .march-round--second {
         background-color: lighten($c-black, 73%);
+
+        .march-bracket__matchup {
+            margin: 100px 0;
+        }
     }
 
     .march-round--regional-semis {
         background-color: lighten($c-black, 76%);
+
+        .march-bracket__matchup {
+            margin: 250px 0;
+        }
     }
 
     .march-round--regional-finals {
@@ -31,14 +39,18 @@
 .march-bracket__matchup {
     margin-bottom: 24px;
 
+    &:first-of-type {
+        margin-top: 0 !important;
+    }
+
     &:last-of-type {
-        margin-bottom: 0;
+        margin-bottom: 0 !important;
     }
 }
 
 .march-bracket__team {
     position: relative;
-    border: 1px solid $c-grey;
+    border: 1px solid darken($c-grey, 5%);
     border-top: 0;
     padding: 0 2px 2px 2px;
     width: 100%;
