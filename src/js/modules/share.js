@@ -1,7 +1,7 @@
 var $ = require('../vendor/jquery.js');
 
 var pageUrl = window.location.href;
-var title = 'Donald Trump\'s first 100 days as president – daily updates';
+var title = 'March madness 2017 bracket';
 
 module.exports =  {
     init: function() {

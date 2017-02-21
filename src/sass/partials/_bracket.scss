@@ -179,6 +179,10 @@
     &:first-of-type {
         margin-bottom: 10px;
     }
+
+    &.is-winner {
+        background-color: $c-orange;
+    }
 }
 
 .march-bracket__logo {
