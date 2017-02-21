@@ -1,8 +1,8 @@
 .march-bracket {
-    overflow: auto;
     background-color: lighten($c-black, 70%);
 
     .march-round {
+        position: relative;
         padding-top: 12px;
         padding-bottom: 12px;
         height: 100%;
@@ -19,6 +19,7 @@
             right: -20px;
             border-top: 1px dotted darken($c-grey, 5%);
             width: 20px;
+            z-index: 2;
         }
 
         .march-bracket__team:first-of-type:after {
@@ -78,6 +79,15 @@
     .march-round--regional-finals {
         background-color: lighten($c-black, 79%);
 
+        &:after {
+            content: '';
+            position: absolute;
+            right: 4px;
+            height: 340px;
+            bottom: -20px;
+            border-left: 1px dotted darken($c-grey, 5%);
+        }
+
         .march-bracket__team:before {
             content: '';
             position: absolute;
@@ -90,6 +100,11 @@
         .march-bracket__team:last-of-type:before {
             bottom: -130px;
             top: auto;
+        }
+
+        .march-bracket__matchup:after {
+            right: -5px;
+            width: 5px;
         }
     }
 
@@ -109,10 +124,31 @@
             right: auto;
         }
     }
+
+    .march-round--regional-finals.march-round--reverse {
+        &:after {
+            left: 4px;
+            right: auto;
+        }
+
+        .march-bracket__matchup:after {
+            left: -5px;
+            right: auto;
+        }
+    }
 }
 
 .march-bracket--middle {
     background-color: $c-white;
+}
+
+.march-bracket--bottom {
+    .march-round--regional-finals {
+        &:after {
+            bottom: auto;
+            top: -20px;
+        }
+    }
 }
 
 .march-bracket__matchup {
