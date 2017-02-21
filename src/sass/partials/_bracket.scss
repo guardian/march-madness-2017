@@ -1,9 +1,32 @@
 .march-bracket {
     overflow: auto;
+    background-color: lighten($c-black, 70%);
 
     .march-round {
-        margin: 12px 0;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        height: 100%;
+        display: table-cell;
+        vertical-align: middle;
+        float: none;
     }
+
+    .march-round--second {
+        background-color: lighten($c-black, 73%);
+    }
+
+    .march-round--regional-semis {
+        background-color: lighten($c-black, 76%);
+    }
+
+    .march-round--regional-finals {
+        background-color: lighten($c-black, 79%);
+    }
+}
+
+.march-bracket__top,
+.march-bracket__bottom {
+    overflow: auto;
 }
 
 .march-bracket__matchup {
@@ -39,6 +62,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     display: block;
+    max-width: 134px;
 }
 
 .march-bracket__seed {
