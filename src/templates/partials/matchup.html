@@ -2,11 +2,15 @@
 <div class='march-bracket__matchup'>
 {{/if_even}}
 
+    {{#if team}}
     <div class='march-bracket__team'>
         <img class='march-bracket__logo' src='@@assetPath@@/assets/badges/{{ Logo }}' />
         <span class='march-bracket__team-name'>{{ Team }}</span>
         <span class='march-bracket__seed'>{{ Seed }}</span>
     </div>
+    {{else}}
+    <div class='march-bracket__team'></div>
+    {{/if}}
 
 {{#if_odd index}}
 </div>
