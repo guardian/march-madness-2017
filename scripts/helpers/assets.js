@@ -49,6 +49,36 @@ module.exports = {
                 return opts.inverse(this);
         });
 
+        handlebars.registerHelper('loop', function(from, to, inc, block) {
+                block = block || {fn: function () { return arguments[0]; }};
+
+                var data = block.data || {index: null};
+
+                var output = '';
+                for (var i = from; i <= to; i += inc) {
+                    data['index'] = i;
+                    output += block.fn(i, {data: data});
+                }
+
+                return output;
+        });
+
+        handlebars.registerHelper('if_even', function(conditional, options) {
+         if((conditional % 2) == 0) {
+           return options.fn(this);
+         } else {
+           return options.inverse(this);
+         }
+        });
+
+        handlebars.registerHelper('if_odd', function(conditional, options) {
+         if((conditional % 2) !== 0) {
+           return options.fn(this);
+         } else {
+           return options.inverse(this);
+         }
+        });
+
         var html = fs.readFileSync('src/templates/main.html', 'utf8');
         var template = handlebars.compile(html);
 

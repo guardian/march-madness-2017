@@ -1,12 +1,87 @@
 <div class='march-bracket'>
     <div class='gs-container'>
-        <div class='march-round march-round--first'>
-            <div class='march-bracket__matchup'>
-                <div class='march-bracket__team'>
-                    <img class='march-bracket__logo' src='@@assetPath@@/badges/villanova.png' />
-                    <h3 class='march-bracket__team-name'>Villanova</h3>
-                    <h3 class='march-bracket__seed'>16</h3>
-                </div>
+        <div class='march-bracket__top'>
+            <div class='march-round march-round--first'>
+                {{#each East}}
+                    {{> templates/partials/matchup index=@index team=@this}}
+                {{/each}}
+            </div>
+            <div class='march-round march-round--second'>
+                {{#loop 0 7 1}}
+                    {{> templates/partials/matchup index=@index}}
+                {{/loop}}
+            </div>
+            <div class='march-round march-round--regional-semis'>
+                {{#loop 0 3 1}}
+                    {{> templates/partials/matchup index=@index}}
+                {{/loop}}
+            </div>
+            <div class='march-round march-round--regional-finals'>
+                {{#loop 0 1 1}}
+                    {{> templates/partials/matchup index=@index}}
+                {{/loop}}
+            </div>
+            <div class='march-round march-round--regional-finals'>
+                {{#loop 0 1 1}}
+                    {{> templates/partials/matchup index=@index}}
+                {{/loop}}
+            </div>
+            <div class='march-round march-round--regional-semis'>
+                {{#loop 0 3 1}}
+                    {{> templates/partials/matchup index=@index}}
+                {{/loop}}
+            </div>
+            <div class='march-round march-round--second'>
+                {{#loop 0 7 1}}
+                    {{> templates/partials/matchup index=@index}}
+                {{/loop}}
+            </div>
+            <div class='march-round march-round--first'>
+                {{#each Midwest}}
+                    {{> templates/partials/matchup index=@index team=@this}}
+                {{/each}}
+            </div>
+        </div>
+        <div class='march-bracket__bottom'>
+            <div class='march-round march-round--first'>
+                {{#each South}}
+                    {{> templates/partials/matchup index=@index team=@this}}
+                {{/each}}
+            </div>
+            <div class='march-round march-round--second'>
+                {{#loop 0 7 1}}
+                    {{> templates/partials/matchup index=@index}}
+                {{/loop}}
+            </div>
+            <div class='march-round march-round--regional-semis'>
+                {{#loop 0 3 1}}
+                    {{> templates/partials/matchup index=@index}}
+                {{/loop}}
+            </div>
+            <div class='march-round march-round--regional-finals'>
+                {{#loop 0 1 1}}
+                    {{> templates/partials/matchup index=@index}}
+                {{/loop}}
+            </div>
+            <div class='march-round march-round--regional-finals'>
+                {{#loop 0 1 1}}
+                    {{> templates/partials/matchup index=@index}}
+                {{/loop}}
+            </div>
+            <div class='march-round march-round--regional-semis'>
+                {{#loop 0 3 1}}
+                    {{> templates/partials/matchup index=@index}}
+                {{/loop}}
+            </div>
+            <div class='march-round march-round--second'>
+                {{#loop 0 7 1}}
+                    {{> templates/partials/matchup index=@index}}
+                {{/loop}}
+            </div>
+            <div class='march-round march-round--first'>
+                {{#each West}}
+                    {{> templates/partials/matchup index=@index team=@this}}
+                {{/each}}
             </div>
         </div>
     </div>
