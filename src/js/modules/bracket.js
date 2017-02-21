@@ -33,6 +33,10 @@ module.exports =  {
             region = $(team).parent().parent().data('region'),
             round = $(team).parent().parent().data('round');
 
-        $('.march-round[data-region="' + region + '"][data-round="' + (round + 1) + '"] .march-bracket__matchup[data-match-number="' + Math.ceil(matchNumber / 2)  + '"] .march-bracket__team:' + (isFirst ? 'first-of-type' : 'last-of-type')).html(html);
+        if (round === 4) {
+            console.log('progress to final four');
+        } else {
+            $('.march-round[data-region="' + region + '"][data-round="' + (round + 1) + '"] .march-bracket__matchup[data-match-number="' + Math.ceil(matchNumber / 2)  + '"] .march-bracket__team:' + (isFirst ? 'first-of-type' : 'last-of-type')).html(html);
+        }
     }
 };
