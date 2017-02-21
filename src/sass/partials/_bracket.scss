@@ -11,11 +11,45 @@
         float: none;
     }
 
+    .march-round {
+        .march-bracket__matchup:after {
+            content: '';
+            position: absolute;
+            top: 26px;
+            right: -20px;
+            border-top: 1px dotted darken($c-grey, 5%);
+            width: 20px;
+        }
+
+        .march-bracket__team:first-of-type:after {
+            content: '';
+            position: absolute;
+            right: -1px;
+            bottom: -11px;
+            height: 20px;
+            border-left: 1px dotted darken($c-grey, 5%);
+        }
+    }
+
     .march-round--second {
         background-color: lighten($c-black, 73%);
 
         .march-bracket__matchup {
-            margin: 100px 0;
+            margin: 102px 0;
+        }
+
+        .march-bracket__team:before {
+            content: '';
+            position: absolute;
+            left: -1px;
+            top: -11px;
+            height: 11px;
+            border-left: 1px dotted darken($c-grey, 5%);
+        }
+
+        .march-bracket__team:last-of-type:before {
+            bottom: -11px;
+            top: auto;
         }
     }
 
@@ -23,12 +57,57 @@
         background-color: lighten($c-black, 76%);
 
         .march-bracket__matchup {
-            margin: 250px 0;
+            margin: 257px 0;
+        }
+
+        .march-bracket__team:before {
+            content: '';
+            position: absolute;
+            left: -1px;
+            top: -50px;
+            height: 50px;
+            border-left: 1px dotted darken($c-grey, 5%);
+        }
+
+        .march-bracket__team:last-of-type:before {
+            bottom: -50px;
+            top: auto;
         }
     }
 
     .march-round--regional-finals {
         background-color: lighten($c-black, 79%);
+
+        .march-bracket__team:before {
+            content: '';
+            position: absolute;
+            left: -1px;
+            top: -130px;
+            height: 130px;
+            border-left: 1px dotted darken($c-grey, 5%);
+        }
+
+        .march-bracket__team:last-of-type:before {
+            bottom: -130px;
+            top: auto;
+        }
+    }
+
+    .march-round--reverse {
+        .march-bracket__team:before {
+            left: auto;
+            right: -1px;
+        }
+
+        .march-bracket__team:after {
+            left: -1px;
+            right: auto;
+        }
+
+        .march-bracket__matchup:after {
+            left: -20px;
+            right: auto;
+        }
     }
 }
 
@@ -38,6 +117,7 @@
 
 .march-bracket__matchup {
     margin-bottom: 24px;
+    position: relative;
 
     &:first-of-type {
         margin-top: 0 !important;
