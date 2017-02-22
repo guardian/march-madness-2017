@@ -22,6 +22,9 @@ module.exports =  {
             $(team).removeClass('is-winner');
             this.stopProgress(team);
         } else {
+            if ($(team).parent().find('.is-winner').length) {
+                this.stopProgress($(team).parent().find('.is-winner'));
+            }
             $(team).parent().find('.is-winner').removeClass('is-winner');
             $(team).addClass('is-winner');
             this.progressWinner(team);
@@ -64,5 +67,5 @@ module.exports =  {
         if (round > 1) {
             $('.march-round[data-round="' + (round - 1) + '"] .march-bracket__team[data-team="' + teamName + '"]').removeClass('is-winner');
         }
-    }
+    },
 };
