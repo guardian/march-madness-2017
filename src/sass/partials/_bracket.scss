@@ -213,6 +213,18 @@
             top: 44px;
         }
     }
+
+    .march-round--winner {
+        position: absolute;
+        top: 81px;
+        margin: auto;
+        left: 0;
+        right: -480px;
+
+        .march-bracket__team:after {
+            display: none;
+        }
+    }
 }
 
 .march-bracket--middle {

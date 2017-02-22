@@ -32,11 +32,12 @@ module.exports =  {
             region = $(team).parent().parent().data('region'),
             round = $(team).parent().parent().data('round');
 
-        if (round === 5) {
+        if (round === 6) {
+            $('.march-round--winner .march-bracket__team').html(html);
+        } else if (round === 5) {
             var isFirst = region === 'east midwest';
             $('.march-round--final .march-bracket__team:' + (isFirst ? 'first-of-type' : 'last-of-type')).html(html);
-        }
-        if (round === 4) {
+        } else if (round === 4) {
             var isTop = region === 'east' || region === 'midwest';
             var isFirst = region === 'east' || region === 'south';
             $('.march-round--semis:' + (isTop ? 'first-of-type' : 'last-of-type') + ' .march-bracket__matchup .march-bracket__team:' + (isFirst ? 'first-of-type' : 'last-of-type')).html(html);

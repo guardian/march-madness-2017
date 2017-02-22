@@ -57,6 +57,9 @@
                 {{> templates/partials/matchup index=@index}}
             {{/loop}}
         </div>
+        <div class='march-round march-round--winner' data-round='7'>
+            {{> templates/partials/matchup }}
+        </div>
         <div class='march-round march-round--semis' data-round='5' data-region='south west'>
             {{#loop 0 1 1}}
                 {{> templates/partials/matchup index=@index}}
