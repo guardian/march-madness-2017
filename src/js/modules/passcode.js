@@ -5,15 +5,8 @@ var pageUrl = document.location.href.split('#')[0],
     id = document.location.href.split('#')[1];
 
 module.exports =  {
-    init: function() {
-        if (id) {
-            this.parseData(id);
-        }
-    },
-
     updateUrl: function() {
         history.pushState('', document.title, pageUrl + '#' + this.getData());
-        this.parseData(this.getData());
     },
 
     getData: function() {
@@ -26,15 +19,18 @@ module.exports =  {
                     data.push(2);
                 }
             } else {
-                data.push(0);
+                data.push(3);
             }
         });
 
+        console.log(data.length);
+
         data = data.join('').match(/.{1,8}/g);
+        console.log(data);
         return vlq.encode(data);
     },
 
-    parseData: function(data) {
-        console.log(vlq.decode(data));
+    parseData: function(id) {
+        return vlq.decode(id).join('').split('');
     }
 }

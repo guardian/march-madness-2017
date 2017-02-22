@@ -1,8 +1,11 @@
 var $ = require('../vendor/jquery.js');
 var passcode = require('../modules/passcode.js');
 
+var init = true;
+
 module.exports =  {
     init: function() {
+        this.restoreProgress();
         this.bindings();
     },
 
@@ -10,6 +13,21 @@ module.exports =  {
         $('.march-bracket__team').click(function(e) {
             this.selectTeam(e.currentTarget)
         }.bind(this));
+    },
+
+    restoreProgress: function() {
+        var id = document.location.href.split('#')[1];
+        if (id) {
+            var data = passcode.parseData(id);
+            console.log('restoring length ' + data.length);
+            $('.march-bracket__matchup').each(function(i, matchup) {
+                console.log('looping');
+                if (data[i] != 3) {
+                    this.selectTeam($(matchup).find('.march-bracket__team:eq(' + (data[i] - 1) + ')'));
+                }
+            }.bind(this));
+        }
+        init = false;
     },
 
     selectTeam: function(team) {
@@ -30,7 +48,9 @@ module.exports =  {
             $(team).addClass('is-winner');
             this.progressWinner(team);
         }
-        passcode.updateUrl();
+        if (init === false) {
+            passcode.updateUrl();
+        }
     },
 
     progressWinner: function(team) {
