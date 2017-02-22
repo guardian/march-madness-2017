@@ -136,10 +136,48 @@
             right: auto;
         }
     }
+
+    // final four
+    .march-round--semis {
+        width: 380px;
+        display: block;
+        margin: 0 auto;
+        padding-left: 0;
+        padding-right: 0;
+
+        .march-bracket__matchup {
+            display: flex;
+        }
+
+        .march-bracket__team {
+            height: 34px;
+
+            &:first-of-type {
+                margin-right: 20px;
+            }
+        }
+    }
+
+    .march-round--final {
+        display: none;
+    }
 }
 
 .march-bracket--middle {
     background-color: $c-white;
+
+    .march-round-label {
+        position: absolute;
+        left: 20px;
+        top: 12px;
+        font-family: 'Guardian Sans Web';
+        font-size: 16px;
+        line-height: 20px;
+
+        strong {
+            display: block;
+        }
+    }
 }
 
 .march-bracket--bottom {
