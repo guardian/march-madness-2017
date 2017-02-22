@@ -12,7 +12,9 @@ module.exports =  {
     },
 
     selectTeam: function(team) {
-        this.highlightWinner(team);
+        if (!$(team).is(':empty')) {
+            this.highlightWinner(team);
+        }
     },
 
     highlightWinner: function(team) {
