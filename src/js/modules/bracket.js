@@ -37,16 +37,16 @@ module.exports =  {
             teamName = $(team).attr('data-team');
 
         if (round === 6) {
-            $('.march-round--winner .march-bracket__team').attr('data-team', teamName).html(html);
+            $('.march-round--winner .march-bracket__team').attr('data-team', teamName).html(html).addClass('is-filled');
         } else if (round === 5) {
             var isFirst = region === 'east midwest';
-            $('.march-round--final .march-bracket__team:' + (isFirst ? 'first-of-type' : 'last-of-type')).attr('data-team', teamName).html(html);
+            $('.march-round--final .march-bracket__team:' + (isFirst ? 'first-of-type' : 'last-of-type')).attr('data-team', teamName).html(html).addClass('is-filled');
         } else if (round === 4) {
             var isTop = region === 'east' || region === 'midwest';
             var isFirst = region === 'east' || region === 'south';
-            $('.march-round--semis:' + (isTop ? 'first-of-type' : 'last-of-type') + ' .march-bracket__matchup .march-bracket__team:' + (isFirst ? 'first-of-type' : 'last-of-type')).attr('data-team', teamName).html(html);
+            $('.march-round--semis:' + (isTop ? 'first-of-type' : 'last-of-type') + ' .march-bracket__matchup .march-bracket__team:' + (isFirst ? 'first-of-type' : 'last-of-type')).attr('data-team', teamName).html(html).addClass('is-filled');
         } else {
-            $('.march-round[data-region="' + region + '"][data-round="' + (round + 1) + '"] .march-bracket__matchup[data-match-number="' + Math.ceil(matchNumber / 2)  + '"] .march-bracket__team:' + (isFirst ? 'first-of-type' : 'last-of-type')).attr('data-team', teamName).html(html);
+            $('.march-round[data-region="' + region + '"][data-round="' + (round + 1) + '"] .march-bracket__matchup[data-match-number="' + Math.ceil(matchNumber / 2)  + '"] .march-bracket__team:' + (isFirst ? 'first-of-type' : 'last-of-type')).attr('data-team', teamName).html(html).addClass('is-filled');
         }
     },
 
@@ -58,7 +58,7 @@ module.exports =  {
             if (i === 1) {
                 return;
             }
-            $('.march-round[data-round="' + i + '"] .march-bracket__team[data-team="' + teamName + '"]').removeClass('is-winner').empty().removeAttr('data-team');
+            $('.march-round[data-round="' + i + '"] .march-bracket__team[data-team="' + teamName + '"]').removeClass('is-winner is-filled').empty().removeAttr('data-team');
         }
 
         if (round > 1) {
