@@ -347,7 +347,7 @@
     cursor: pointer;
 
     &:hover {
-        background-color: lighten($c-grey, 5%);
+        background-color: rgba(0, 0, 0, 0.05);
     }
 
     &:first-of-type {
