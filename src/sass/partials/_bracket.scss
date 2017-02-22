@@ -83,8 +83,8 @@
             content: '';
             position: absolute;
             right: 4px;
-            height: 333px;
-            bottom: -20px;
+            height: 340px;
+            bottom: -29px;
             border-left: 1px dotted darken($c-grey, 5%);
         }
 
@@ -147,17 +147,57 @@
 
         .march-bracket__matchup {
             display: flex;
+
+            &:after {
+                border: 1px dotted darken($c-grey, 5%);
+                border-top: 0;
+                height: 10px;
+                top: auto;
+                bottom: -10px;
+                right: 0;
+                left: 0;
+                margin: auto;
+            }
+        }
+
+        &:last-of-type .march-bracket__matchup:after {
+            border-bottom: 0;
+            border-top: 1px dotted darken($c-grey, 5%);
+            bottom: auto;
+            top: -10px;
         }
 
         .march-bracket__team {
+            margin-bottom: 0;
+
             &:first-of-type {
                 margin-right: 20px;
+            }
+
+            &:first-of-type:after {
+                height: 0;
+                border-left: 0;
+                width: 5px;
+                right: -5px;
+                bottom: 16px;
+                border-top: 1px dotted darken($c-grey, 5%);
+            }
+
+            &:last-of-type:after {
+                content: '';
+                position: absolute;
+                height: 0;
+                border-left: 0;
+                width: 5px;
+                left: -5px;
+                bottom: 16px;
+                border-top: 1px dotted darken($c-grey, 5%);
             }
         }
     }
 
     .march-round--final {
-        display: none;
+
     }
 }
 
@@ -203,7 +243,7 @@
     .march-round--regional-finals {
         &:after {
             bottom: auto;
-            top: -20px;
+            top: -29px;
         }
     }
 }
