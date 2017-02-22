@@ -199,10 +199,29 @@
     .march-round--final {
         display: block;
         width: 180px;
-        margin: 0 auto;
+        margin: 5px auto;
+
+        .march-bracket__team {
+            &:before {
+                content: '';
+                position: absolute;
+                height: 20px;
+                width: 1px;
+                bottom: -20px;
+                left: 0;
+                right: 0;
+                margin: auto;
+                border-left: 1px dotted darken($c-grey, 5%);
+            }
+        }
 
         .march-bracket__team:first-of-type {
             margin-bottom: 20px;
+
+            &:before {
+                top: -20px;
+                bottom: auto;
+            }
 
             &:after {
                 bottom: -20px;
@@ -211,15 +230,19 @@
 
         .march-bracket__matchup:after {
             top: 44px;
+            width: 55px;
+            right: -55px;
         }
     }
 
     .march-round--winner {
         position: absolute;
-        top: 81px;
+        top: 92px;
         margin: auto;
         left: 0;
         right: -480px;
+        height: auto;
+        width: 180px;
 
         .march-bracket__team:after {
             display: none;
