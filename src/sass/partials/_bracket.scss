@@ -150,8 +150,6 @@
         }
 
         .march-bracket__team {
-            height: 34px;
-
             &:first-of-type {
                 margin-right: 20px;
             }
@@ -177,6 +175,23 @@
         strong {
             display: block;
         }
+    }
+
+    .march-bracket__team {
+        height: 34px;
+        font-size: 22px;
+        line-height: 1.4;
+    }
+
+    .march-bracket__logo {
+        width: 30px;
+        top: 2px;
+        margin: auto;
+    }
+
+    .march-bracket__team-name {
+        padding-left: 36px;
+        width: 170px;
     }
 }
 

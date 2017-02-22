@@ -3,7 +3,6 @@ var $ = require('../vendor/jquery.js');
 module.exports =  {
     init: function() {
         this.bindings();
-        console.log('bracket');
     },
 
     bindings: function() {
@@ -33,8 +32,16 @@ module.exports =  {
             region = $(team).parent().parent().data('region'),
             round = $(team).parent().parent().data('round');
 
+        if (round === 5) {
+            console.log('finalist!');
+        }
         if (round === 4) {
-            console.log('progress to final four');
+            var isTop = region === 'east' || region === 'midwest';
+            var isFirst = region === 'east' || region === 'south';
+            console.log(isTop);
+            console.log(isFirst);
+            console.log('.march-round--semis:' + (isTop ? 'first-of-type' : 'last-of-type') + ' .march-round[data-round="5"] .march-bracket__matchup .march-bracket__team');
+            $('.march-round--semis:' + (isTop ? 'first-of-type' : 'last-of-type') + ' .march-bracket__matchup .march-bracket__team:' + (isFirst ? 'first-of-type' : 'last-of-type')).html(html);
         } else {
             $('.march-round[data-region="' + region + '"][data-round="' + (round + 1) + '"] .march-bracket__matchup[data-match-number="' + Math.ceil(matchNumber / 2)  + '"] .march-bracket__team:' + (isFirst ? 'first-of-type' : 'last-of-type')).html(html);
         }
