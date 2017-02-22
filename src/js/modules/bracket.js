@@ -58,8 +58,11 @@ module.exports =  {
             if (i === 1) {
                 return;
             }
-            console.log('.march-round[data-round="' + i + '"] .march-bracket__team[data-team="' + teamName + '"]');
             $('.march-round[data-round="' + i + '"] .march-bracket__team[data-team="' + teamName + '"]').removeClass('is-winner').empty().removeAttr('data-team');
+        }
+
+        if (round > 1) {
+            $('.march-round[data-round="' + (round - 1) + '"] .march-bracket__team[data-team="' + teamName + '"]').removeClass('is-winner');
         }
     }
 };
