@@ -197,7 +197,21 @@
     }
 
     .march-round--final {
+        display: block;
+        width: 180px;
+        margin: 0 auto;
 
+        .march-bracket__team:first-of-type {
+            margin-bottom: 20px;
+
+            &:after {
+                bottom: -20px;
+            }
+        }
+
+        .march-bracket__matchup:after {
+            top: 44px;
+        }
     }
 }
 
