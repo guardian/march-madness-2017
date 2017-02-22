@@ -1,35 +1,40 @@
 var $ = require('../vendor/jquery.js');
-var md5 = require('md5');
+var vlq = require('vlq');
 
-var data = [],
-    pageUrl = document.location.href.split('#')[0];
+var pageUrl = document.location.href.split('#')[0],
+    id = document.location.href.split('#')[1];
 
 module.exports =  {
     init: function() {
-        this.updateUrl();
+        if (id) {
+            this.parseData(id);
+        }
     },
 
     updateUrl: function() {
         history.pushState('', document.title, pageUrl + '#' + this.getData());
+        this.parseData(this.getData());
     },
 
     getData: function() {
+        var data = [];
         $('.march-bracket__matchup').each(function() {
-            data.push({
-               region: $(this).parent().attr('data-region'),
-               round: $(this).parent().attr('data-round'),
-               matchNumber: $(this).attr('data-match-number'),
-               teams: [{
-                   isFilled: $(this).find('.march-bracket__team:first-of-type').hasClass('is-filled'),
-                   team: $(this).find('.march-bracket__team:first-of-type').attr('data-team')
-               },
-               {
-                   isFilled: $(this).find('.march-bracket__team:last-of-type').hasClass('is-filled'),
-                   team: $(this).find('.march-bracket__team:last-of-type').attr('data-team')
-               }]
-            });
+            if ($(this).find('.is-winner').length) {
+                if ($(this).find('.is-winner').is(':first-of-type')) {
+                    data.push(1);
+                } else {
+                    data.push(2);
+                }
+            } else {
+                data.push(0);
+            }
         });
 
-        return md5(data);
+        data = data.join('').match(/.{1,8}/g);
+        return vlq.encode(data);
+    },
+
+    parseData: function(data) {
+        console.log(vlq.decode(data));
     }
 }

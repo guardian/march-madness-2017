@@ -1,4 +1,5 @@
 var $ = require('../vendor/jquery.js');
+var passcode = require('../modules/passcode.js');
 
 module.exports =  {
     init: function() {
@@ -29,6 +30,7 @@ module.exports =  {
             $(team).addClass('is-winner');
             this.progressWinner(team);
         }
+        passcode.updateUrl();
     },
 
     progressWinner: function(team) {
