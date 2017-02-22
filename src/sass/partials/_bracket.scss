@@ -191,7 +191,11 @@
 
     .march-bracket__team-name {
         padding-left: 36px;
-        width: 170px;
+        max-width: 170px;
+    }
+
+    .march-bracket__seed {
+        bottom: 1px;
     }
 }
 
