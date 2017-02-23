@@ -1,7 +1,8 @@
 .march-header {
     position: relative;
     background-image: url('@@assetPath@@/assets/images/background.png');
-    background-position: center center;
+    background-position: center top;
+    overflow: hidden;
 
     .gs-container {
         height: 100%;
@@ -10,9 +11,20 @@
 
 .march-header__content {
     position: relative;
-    margin-left: 180px;
     width: 620px;
-    height: 550px;
+    height: 450px;
+
+    @include mq(desktop) {
+        margin-left: 20px;
+    }
+
+    @include mq(leftCol) {
+        margin-left: 160px;
+    }
+
+    @include mq(wide) {
+        margin-left: 180px;
+    }
 }
 
 .march-header__title {
@@ -60,7 +72,7 @@
 .march-header__cutout {
     position: absolute;
     right: -350px;
-    bottom: 0;
+    bottom: -100px;
 }
 
 .march-header {
