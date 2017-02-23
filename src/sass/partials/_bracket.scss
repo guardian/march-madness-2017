@@ -301,9 +301,39 @@
     }
 }
 
+.march-bracket--top,
+.march-bracket--bottom {
+    .gs-container {
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+    }
+
+    .march-bracket__inner {
+        display: table-row;
+    }
+
+    .march-round {
+        width: 100px;
+
+        @include mq(leftCol) {
+            width: 120px;
+        }
+
+        @include mq(wide) {
+            width: 140px;
+        }
+    }
+
+    .march-bracket__logo {
+        @include mq(tablet, leftCol) {
+            display: none;
+        }
+    }
+}
+
 .march-bracket__label {
     position: absolute;
-    left: 250px;
     top: 290px;
     z-index: 10;
     font-family: 'Guardian Egyptian Web';
@@ -311,12 +341,35 @@
     font-weight: 900;
     width: 160px;
     text-align: center;
+
+    @include mq(desktop) {
+        left: 175px;
+    }
+
+    @include mq(leftCol) {
+        left: 200px;
+    }
+
+    @include mq(wide) {
+        left: 250px;
+    }
 }
 
 .march-bracket__label--midwest,
 .march-bracket__label--west {
     left: auto;
-    right: 250px;
+
+    @include mq(desktop) {
+        right: 175px;
+    }
+
+    @include mq(leftCol) {
+        right: 200px;
+    }
+
+    @include mq(wide) {
+        right: 250px;
+    }
 }
 
 .march-bracket__matchup {
@@ -370,7 +423,6 @@
 }
 
 .march-bracket__team-name {
-    padding-left: 24px;
     padding-right: 16px;
     box-sizing: border-box;
     white-space: nowrap;
@@ -378,6 +430,10 @@
     text-overflow: ellipsis;
     display: block;
     max-width: 134px;
+
+    @include mq(leftCol) {
+        padding-left: 24px;
+    }
 }
 
 .march-bracket__seed {
