@@ -1,0 +1,15 @@
+.march-tabs {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: auto;
+}
+
+.march-tabs__option {
+    float: left;
+    width: 140px;
+
+    &.is-selected {
+        background-color: $c-orange;
+    }
+}

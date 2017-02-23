@@ -341,9 +341,11 @@
     font-weight: 900;
     width: 160px;
     text-align: center;
+    display: none;
 
     @include mq(desktop) {
         left: 175px;
+        display: block;
     }
 
     @include mq(leftCol) {
@@ -392,11 +394,15 @@
     padding: 2px;
     width: 100%;
     font-family: 'Guardian Sans Web';
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.2;
     box-sizing: border-box;
     height: 22px;
     user-select: none;
+
+    @include mq(desktop) {
+        font-size: 16px;
+    }
 
     &.is-filled {
         cursor: pointer;

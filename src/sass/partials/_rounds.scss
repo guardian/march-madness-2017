@@ -5,9 +5,13 @@
     background-color: $c-black;
     color: $c-white;
     font-family: 'Guardian Sans Web';
-    font-size: 16px;
+    font-size: 14px;
     line-height: 20px;
     overflow: auto;
+
+    @include mq(desktop) {
+        font-size: 16px;
+    }
 
     .gs-container {
         display: flex;
