@@ -1,5 +1,6 @@
 var $ = require('../vendor/jquery.js');
 var passcode = require('../modules/passcode.js');
+var bar = require('../modules/bar.js');
 
 var init = true;
 
@@ -26,6 +27,8 @@ module.exports =  {
                     this.selectTeam($(matchup).find('.march-bracket__team:last-of-type'));
                 }
             }.bind(this));
+            bar.show();
+            bar.update();
         }
         init = false;
     },
@@ -50,6 +53,8 @@ module.exports =  {
         }
         if (init === false) {
             passcode.updateUrl();
+            bar.show();
+            bar.update();
         }
     },
 
