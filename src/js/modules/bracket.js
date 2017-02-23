@@ -19,11 +19,11 @@ module.exports =  {
         var id = document.location.href.split('#')[1];
         if (id) {
             var data = passcode.parseData(id);
-            console.log('restoring length ' + data.length);
-            $('.march-bracket__matchup').each(function(i, matchup) {
-                console.log('looping');
-                if (data[i] != 3) {
-                    this.selectTeam($(matchup).find('.march-bracket__team:eq(' + (data[i] - 1) + ')'));
+            $(passcode.orderMatchups()).each(function(i, matchup) {
+                if (data[i] == '1') {
+                    this.selectTeam($(matchup).find('.march-bracket__team:first-of-type'));
+                } else if (data[i] == '2') {
+                    this.selectTeam($(matchup).find('.march-bracket__team:last-of-type'));
                 }
             }.bind(this));
         }

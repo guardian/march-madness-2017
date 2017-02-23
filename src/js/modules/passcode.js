@@ -11,7 +11,7 @@ module.exports =  {
 
     getData: function() {
         var data = [];
-        $('.march-bracket__matchup').each(function() {
+        $(this.orderMatchups()).each(function() {
             if ($(this).find('.is-winner').length) {
                 if ($(this).find('.is-winner').is(':first-of-type')) {
                     data.push(1);
@@ -23,14 +23,23 @@ module.exports =  {
             }
         });
 
-        console.log(data.length);
-
         data = data.join('').match(/.{1,8}/g);
-        console.log(data);
         return vlq.encode(data);
     },
 
     parseData: function(id) {
         return vlq.decode(id).join('').split('');
+    },
+
+    orderMatchups: function() {
+        var $matchups = $();
+
+        for (var i = 1; i < 8; i++) {
+            $('.march-round[data-round="'+ i + '"] .march-bracket__matchup').each(function(index, element) {
+                $matchups.push.apply($matchups, $(element));
+            });
+        }
+
+        return $matchups;
     }
 }
