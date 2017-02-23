@@ -1,0 +1,66 @@
+.march-bar {
+    background-color: $c-orange;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    padding-top: 8px;
+    box-sizing: border-box;
+    z-index: 3000; // because frontend is ridiculous
+    font-family: 'Guardian Sans Web';
+    font-size: 16px;
+}
+
+.march-bar__share {
+    float: left;
+    display: flex;
+    line-height: 2.5;
+    margin-left: 10px;
+
+    @include mq(mobileLandscape) {
+        margin-left: 20px;
+    }
+}
+
+.march-bar__label {
+    margin-right: 8px;
+}
+
+.march-bar__url-input {
+    border-radius: 20px;
+    border: 0;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-left: 8px;
+    background-color: $c-off-white;
+    width: 280px;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.march-bar__print-button {
+    font-family: 'Guardian Sans Web';
+    font-size: 16px;
+    color: $c-orange;
+    background-color: $c-black;
+    background-image: url('@@assetPath@@/assets/images/arrow-right-orange.svg');
+    background-repeat: no-repeat;
+    background-position: right 4px center;
+    border-radius: 19px;
+    padding: 8px 40px 8px 12px;
+    display: inline-block;
+    float: right;
+    margin-right: 10px;
+
+    @include mq(mobileLandscape) {
+        margin-right: 20px;
+    }
+
+    &:hover {
+        text-decoration: none;
+        background-color: darken($c-black, 5%);
+    }
+}
