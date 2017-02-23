@@ -39,10 +39,10 @@ module.exports =  {
     highlightWinner: function(team) {
         if ($(team).hasClass('is-winner')) {
             $(team).removeClass('is-winner');
-            this.stopProgress(team);
+            this.stopProgress(team, true);
         } else {
             if ($(team).parent().find('.is-winner').length) {
-                this.stopProgress($(team).parent().find('.is-winner'));
+                this.stopProgress($(team).parent().find('.is-winner'), false);
             }
             $(team).parent().find('.is-winner').removeClass('is-winner');
             $(team).addClass('is-winner');
@@ -75,9 +75,10 @@ module.exports =  {
         }
     },
 
-    stopProgress: function(team) {
+    stopProgress: function(team, isDirect) {
         var round = $(team).parent().parent().data('round'),
             teamName = $(team).attr('data-team');
+        round = isDirect ? round : round + 1;
 
         for (var i = 7; i >= round; i--) {
             if (i === 1) {
