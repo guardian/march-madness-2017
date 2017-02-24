@@ -60,6 +60,7 @@
             {{/loop}}
         </div>
         <div class='march-round march-round--winner' data-round='7'>
+            <div class='march-bracket__matchup' data-match-number='{{ match-number index }}'><!-- is closed in matchup.html -->
             {{> templates/partials/matchup }}
         </div>
         <div class='march-round march-round--semis' data-round='5' data-region='south west'>
@@ -94,7 +95,7 @@
                     {{> templates/partials/matchup index=@index}}
                 {{/loop}}
             </div>
-            <div class='march-round march-round--regional-finals march-round--reverse' data-round='4' data-region='west'>
+            <div class='march-round march-round--regional-finals march-round--reverse test' data-round='4' data-region='west'>
                 {{#loop 0 1 1}}
                     {{> templates/partials/matchup index=@index}}
                 {{/loop}}
