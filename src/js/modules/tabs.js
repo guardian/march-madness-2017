@@ -17,5 +17,6 @@ module.exports =  {
         $(element).addClass('is-selected');
 
         $('.march').removeClass().addClass('march march--' + selectedTab);
+        $('.march-scroll').scrollLeft(0);
     }
 }
