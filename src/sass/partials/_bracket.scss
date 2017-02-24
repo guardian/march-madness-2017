@@ -82,6 +82,10 @@
             height: 340px;
             bottom: -29px;
             border-left: 1px dotted darken($c-grey, 5%);
+
+            @include mq($until: desktop) {
+                display: none;
+            }
         }
 
         .march-bracket__team:before {
@@ -99,8 +103,10 @@
         }
 
         .march-bracket__matchup:after {
-            right: -5px;
-            width: 5px;
+            @include mq(desktop) {
+                right: -5px;
+                width: 5px;
+            }
         }
     }
 
