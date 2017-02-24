@@ -11,11 +11,20 @@
 
 .march-header__content {
     position: relative;
-    width: 620px;
+    padding: 0 10px;
     height: 450px;
+
+    @include mq(mobileLandscape) {
+        padding: 0 20px;
+    }
+
+    @include mq(tablet) {
+        width: 460px;
+    }
 
     @include mq(desktop) {
         margin-left: 20px;
+        width: 620px;
     }
 
     @include mq(leftCol) {
@@ -31,16 +40,21 @@
     font-family: 'Guardian Egyptian Web';
     font-weight: 900;
     color: $c-orange;
-    font-size: 72px;
+    font-size: 48px;
     line-height: 1;
     padding-top: 12px;
+
+    @include mq(desktop) {
+        font-size: 72px;
+    }
 }
 
 .march-header__content-bottom {
-    position: absolute;
-    bottom: 12px;
-    width: 620px;
-    overflow: auto;
+    @include mq(tablet) {
+        position: absolute;
+        bottom: 12px;
+        overflow: auto;
+    }
 }
 
 .march-header__intro {
@@ -71,8 +85,19 @@
 
 .march-header__cutout {
     position: absolute;
-    right: -350px;
-    bottom: -100px;
+    right: -300px;
+    bottom: 0;
+    width: 180px;
+
+    @include mq(tablet) {
+        right: -300px;
+        bottom: -100px;
+        width: auto;
+    }
+
+    @include mq(desktop) {
+        right: -350px;
+    }
 }
 
 .march-header {

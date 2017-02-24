@@ -514,6 +514,7 @@
     .march-scroll {
         overflow-x: scroll;
         overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
 
         & > * {
             width: 768px;
