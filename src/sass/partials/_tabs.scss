@@ -35,7 +35,9 @@
     width: 100%;
 
     .is-sticky ~ & {
-        display: block;
+        @include mq($until: desktop) {
+            display: block;
+        }
     }
 }
 
