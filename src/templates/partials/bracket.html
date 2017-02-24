@@ -23,6 +23,12 @@
                     {{> templates/partials/matchup index=@index}}
                 {{/loop}}
             </div>
+            <div class='march-round march-round--mobile-link' data-region='east'>
+                <a class='march-bracket__progress-button'>
+                    <div class='march-bracket__team'></div>
+                    Progress to the final four {{> templates/icons/arrow-right-orange }}
+                </a>
+            </div>
             <div class='march-round march-round--regional-finals march-round--reverse' data-round='4' data-region='midwest'>
                 {{#loop 0 1 1}}
                     {{> templates/partials/matchup index=@index}}

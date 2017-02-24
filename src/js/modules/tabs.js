@@ -40,7 +40,6 @@ module.exports =  {
             $('.march-tabs').addClass('is-sticky');
         } else {
             $('.march-tabs').removeClass('is-sticky');
-            console.log('eh?');
         }
     }
 }
