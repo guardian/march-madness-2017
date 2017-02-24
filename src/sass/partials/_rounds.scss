@@ -28,6 +28,14 @@
     .march-round--regional-finals {
         background-color: lighten($c-black, 30%);
     }
+
+    .march-round--progress {
+        background-color: lighten($c-black, 40%);
+
+        @include mq(tablet) {
+            display: none;
+        }
+    }
 }
 
 .march-round {
@@ -39,6 +47,12 @@
 
     @include mq($until: desktop) {
         &:nth-of-type(-n+4) {
+            display: block;
+        }
+    }
+
+    @include mq($until: tablet) {
+        &:nth-of-type(-n+5) {
             display: block;
         }
     }

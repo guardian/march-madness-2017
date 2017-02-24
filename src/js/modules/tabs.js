@@ -13,6 +13,10 @@ module.exports =  {
             this.selectTab(element.currentTarget);
         }.bind(this));
 
+        $('.march-bracket__progress-button').click(function() {
+            this.selectTab($('.march-tabs__option[data-region="final-four"]'));
+        }.bind(this));
+
         $(window).scroll(function() {
             this.onScroll();
         }.bind(this));

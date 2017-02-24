@@ -103,6 +103,9 @@
         }
 
         .march-bracket__matchup:after {
+            width: 16px;
+            right: -16px;
+
             @include mq(desktop) {
                 right: -5px;
                 width: 5px;
@@ -529,24 +532,27 @@
 }
 
 .march-round--mobile-link {
+    display: flex !important;
     background-color: $c-white;
+
     @include mq(tablet) {
         display: none !important;
-    }
-
-    .march-bracket__team {
-        border: 0;
-
-        &:after {
-            display: none;
-        }
     }
 
     .march-bracket__progress-button {
         font-size: 14px;
         font-family: 'Guardian Sans Web';
         color: $c-orange;
-        padding: 3px;
-        border: 1px solid darken($c-grey, 5%);
+        background-image: url('@@assetPath@@/assets/images/arrow-right-orange.svg');
+        background-position: right center;
+        background-repeat: no-repeat;
+        background-size: 28px;
+        padding-right: 26px;
+
+        &:hover {
+            color: $c-black;
+            text-decoration: none;
+            background-image: url('@@assetPath@@/assets/images/arrow-right.svg');
+        }
     }
 }
