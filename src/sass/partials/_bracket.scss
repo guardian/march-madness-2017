@@ -3,11 +3,7 @@
 
     .march-round {
         position: relative;
-        padding-top: 12px;
-        padding-bottom: 12px;
         height: 100%;
-        display: table-cell;
-        vertical-align: middle;
         float: none;
     }
 
@@ -36,7 +32,7 @@
         background-color: lighten($c-black, 73%);
 
         .march-bracket__matchup {
-            margin: 102px 0;
+            margin: 51px 0;
         }
 
         .march-bracket__team:before {
@@ -58,7 +54,7 @@
         background-color: lighten($c-black, 76%);
 
         .march-bracket__matchup {
-            margin: 257px 0;
+            margin: 128px 0;
         }
 
         .march-bracket__team:before {
@@ -305,18 +301,21 @@
 
 .march-bracket--top,
 .march-bracket--bottom {
-    .gs-container {
-        display: table;
-        table-layout: fixed;
-        width: 100%;
-    }
-
     .march-bracket__inner {
-        display: table-row;
+        display: flex;
+        flex-direction: row;
+        height: 630px;
     }
 
     .march-round {
+        padding-top: 0;
+        padding-bottom: 0;
         width: 100px;
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        flex-direction: column;
+        height: 100%;
 
         @include mq(leftCol) {
             width: 120px;
@@ -454,19 +453,54 @@
 // mobile tabs
 @include mq($until: desktop) {
     .march-bracket {
+        display: none;
+
         .march-round {
             display: none;
         }
+    }
+
+    .march--east .march-bracket--top,
+    .march--midwest .march-bracket--top {
+        display: block;
+    }
+
+    .march--south .march-bracket--bottom,
+    .march--west .march-bracket--bottom {
+        display: block;
     }
 
     .march--east .march-round[data-region='east'],
     .march--midwest .march-round[data-region='midwest'],
     .march--south .march-round[data-region='south'],
     .march--west .march-round[data-region='west'] {
-        display: table-cell;
+        display: flex;
     }
 
-    .march--final-four .march-bracket--middle .march-round {
-        display: block;
+    .march--midwest .march-bracket__inner,
+    .march--west .march-bracket__inner {
+        flex-direction: row-reverse;
+    }
+
+    .march--midwest,
+    .march--west {
+        .march-bracket__inner {
+            flex-direction: row-reverse;
+        }
+
+        .march-round:last-of-type {
+            padding-right: 10px;
+            padding-left: 20px;
+        }
+    }
+
+    .march--final-four {
+        .march-bracket--middle {
+            display: block;
+
+            .march-round {
+                display: block;
+            }
+        }
     }
 }
