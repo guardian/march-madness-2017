@@ -327,7 +327,7 @@
     }
 
     .march-bracket__logo {
-        @include mq(tablet, leftCol) {
+        @include mq(desktop, leftCol) {
             display: none;
         }
     }
@@ -431,12 +431,17 @@
 
 .march-bracket__team-name {
     padding-right: 16px;
+    padding-left: 24px;
     box-sizing: border-box;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     display: block;
     max-width: 134px;
+
+    @include mq(desktop) {
+        padding-left: 0;
+    }
 
     @include mq(leftCol) {
         padding-left: 24px;
@@ -501,6 +506,17 @@
             .march-round {
                 display: block;
             }
+        }
+    }
+}
+
+@include mq($until: tablet) {
+    .march-scroll {
+        overflow-x: scroll;
+        overflow-y: hidden;
+
+        & > * {
+            width: 768px;
         }
     }
 }
