@@ -10,6 +10,15 @@
         display: none;
     }
 
+    &.is-sticky {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 3000;
+    }
+
     .gs-container {
         padding: 0 10px;
         box-sizing: border-box;
@@ -17,6 +26,16 @@
         @include mq(mobileLandscape) {
             padding: 0 20px;
         }
+    }
+}
+
+.march-tabs-spacer {
+    height: 50px;
+    display: none;
+    width: 100%;
+
+    .is-sticky ~ & {
+        display: block;
     }
 }
 
