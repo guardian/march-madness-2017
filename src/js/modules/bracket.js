@@ -75,6 +75,7 @@ module.exports =  {
             var isTop = region === 'east' || region === 'midwest';
             var isFirst = region === 'east' || region === 'south';
             $('.march-round--semis:' + (isTop ? 'first-of-type' : 'last-of-type') + ' .march-bracket__matchup .march-bracket__team:' + (isFirst ? 'first-of-type' : 'last-of-type')).attr('data-team', teamName).html(html).addClass('is-filled');
+            $('.march-round--mobile-link[data-region="' + region + '"] .march-bracket__team').attr('data-team', teamName).html(html).addClass('is-filled');
         } else {
             $('.march-round[data-region="' + region + '"][data-round="' + (round + 1) + '"] .march-bracket__matchup[data-match-number="' + Math.ceil(matchNumber / 2)  + '"] .march-bracket__team:' + (isFirst ? 'first-of-type' : 'last-of-type')).attr('data-team', teamName).html(html).addClass('is-filled');
         }
@@ -90,6 +91,10 @@ module.exports =  {
                 return;
             }
             $('.march-round[data-round="' + i + '"] .march-bracket__team[data-team="' + teamName + '"]').removeClass('is-winner is-filled').empty().removeAttr('data-team');
+            if (i === 4) {
+                console.log('round 4 killer');
+                $('.march-round--mobile-link .march-bracket__team[data-team="' + teamName + '"]').removeClass('is-filled').empty();
+            }
         }
 
         if (round > 1) {

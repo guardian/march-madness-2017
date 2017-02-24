@@ -527,3 +527,26 @@
         }
     }
 }
+
+.march-round--mobile-link {
+    background-color: $c-white;
+    @include mq(tablet) {
+        display: none !important;
+    }
+
+    .march-bracket__team {
+        border: 0;
+
+        &:after {
+            display: none;
+        }
+    }
+
+    .march-bracket__progress-button {
+        font-size: 14px;
+        font-family: 'Guardian Sans Web';
+        color: $c-orange;
+        padding: 3px;
+        border: 1px solid darken($c-grey, 5%);
+    }
+}
