@@ -27,10 +27,19 @@
     @include mq(mobileLandscape) {
         margin-left: 20px;
     }
+
+    @include mq(phablet) {
+        width: calc(100% - 220px);
+    }
 }
 
 .march-bar__label {
     margin-right: 8px;
+    display: none;
+
+    @include mq(desktop) {
+        display: block;
+    }
 }
 
 .march-bar__url-input {
@@ -40,7 +49,16 @@
     padding-right: 12px;
     margin-left: 8px;
     background-color: $c-off-white;
-    width: 280px;
+    flex-grow: 1;
+    display: none;
+
+    @include mq(phablet) {
+        display: block;
+    }
+
+    @include mq(desktop) {
+        width: 340px;
+    }
 
     &:focus {
         outline: none;
@@ -60,6 +78,8 @@
     display: inline-block;
     float: right;
     margin-right: 10px;
+    position: absolute;
+    right: 0;
 
     @include mq(mobileLandscape) {
         margin-right: 20px;
