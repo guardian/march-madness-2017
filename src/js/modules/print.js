@@ -7,7 +7,7 @@ module.exports =  {
     },
 
     bindings: function() {
-        $('.march-header__print-button').click(function() {
+        $('.march-header__print-button, .march-bar__print-button').click(function() {
             this.generateCanvas();
         }.bind(this));
     },
