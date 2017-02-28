@@ -13,6 +13,7 @@
     position: relative;
     padding: 0 10px;
     height: 450px;
+    z-index: 2;
 
     @include mq(mobileLandscape) {
         padding: 0 20px;
@@ -50,6 +51,9 @@
 }
 
 .march-header__content-bottom {
+    position: relative;
+    z-index: 2;
+
     @include mq(tablet) {
         position: absolute;
         bottom: 12px;
@@ -89,11 +93,38 @@
     }
 }
 
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(400px);
+    }
+    1% {
+        opacity: 1;
+        transform: translateX(20px);
+    }
+    33% {
+        opacity: 1;
+        transform: translateX(-20px);
+    }
+    34% {
+        opacity: 0;
+        transform: translateX(-400px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(400px);
+    }
+}
+
 .march-header__cutout {
     position: absolute;
     right: -300px;
     bottom: 0;
     width: 180px;
+    opacity: 0;
+    z-index: 1;
+    animation: 18s linear slideIn infinite;
+    pointer-events: none;
 
     @include mq(tablet) {
         right: -300px;
@@ -102,7 +133,15 @@
     }
 
     @include mq(desktop) {
-        right: -350px;
+        right: -370px;
+    }
+
+    &--2 {
+        animation-delay: 6s;
+    }
+
+    &--3 {
+        animation-delay: 12s;
     }
 }
 
