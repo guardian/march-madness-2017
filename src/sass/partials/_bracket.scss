@@ -321,11 +321,19 @@
 
     .march-round-label {
         position: absolute;
-        left: 20px;
-        top: 12px;
+        left: 10px;
+        top: 4px;
         font-family: 'Guardian Sans Web';
-        font-size: 16px;
+        font-size: 14px;
         line-height: 20px;
+
+        @include mq(mobileLandscape) {
+            left: 20px;
+        }
+
+        @include mq(desktop) {
+            font-size: 16px;
+        }
 
         strong {
             display: block;

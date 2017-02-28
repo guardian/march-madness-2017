@@ -36,6 +36,12 @@
             display: none;
         }
     }
+
+    .march--final-four & {
+        @include mq($until: desktop) {
+            display: none;
+        }
+    }
 }
 
 .march-round {
