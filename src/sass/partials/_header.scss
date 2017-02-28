@@ -76,10 +76,16 @@
     border-radius: 19px;
     padding: 8px 40px 8px 12px;
     display: inline-block;
+    opacity: 0;
+    transition: 0.2s ease-out opacity;
 
     &:hover {
         text-decoration: none;
         background-color: darken($c-orange, 5%);
+    }
+
+    &.is-printable {
+        opacity: 1;
     }
 }
 

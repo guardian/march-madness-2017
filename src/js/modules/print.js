@@ -4,12 +4,17 @@ var jsPDF = require('jspdf');
 module.exports =  {
     init: function() {
         this.bindings();
+        this.showPrintButtons();
     },
 
     bindings: function() {
         $('.march-header__print-button, .march-bar__print-button').click(function() {
             this.generateCanvas();
         }.bind(this));
+    },
+
+    showPrintButtons: function() {
+        $('.march-header__print-button, .march-bar__print-button').addClass('is-printable');
     },
 
     exportBracket: function(imgData) {

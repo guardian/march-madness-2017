@@ -80,6 +80,8 @@
     margin-right: 10px;
     position: absolute;
     right: 0;
+    opacity: 0;
+    transition: 0.2s ease-out opacity;
 
     @include mq(mobileLandscape) {
         margin-right: 20px;
@@ -88,5 +90,9 @@
     &:hover {
         text-decoration: none;
         background-color: darken($c-black, 5%);
+    }
+
+    &.is-printable {
+        opacity: 1;
     }
 }
