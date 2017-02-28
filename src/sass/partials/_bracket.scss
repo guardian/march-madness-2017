@@ -246,17 +246,27 @@
 
     .march-round--winner {
         position: absolute;
-        top: 84px;
+        top: 88px;
         margin: auto;
         left: 0;
-        right: -640px;
+        right: -530px;
         height: auto;
-        width: 300px;
+        width: 190px;
+
+        @include mq(desktop) {
+            top: 84px;
+            width: 300px;
+            right: -640px;
+        }
 
         .march-bracket__team {
             border-color: $c-orange;
-            height: 68px;
-            font-size: 32px;
+            height: 52px;
+
+            @include mq(desktop) {
+                height: 68px;
+                font-size: 32px;
+            }
 
             &:before {
                 content: 'Winner';
@@ -275,15 +285,23 @@
         }
 
         .march-bracket__team-name {
-            padding-left: 56px;
+            padding-left: 38px;
             max-width: 270px;
             margin-top: 20px;
+
+            @include mq(desktop) {
+                padding-left: 56px;
+            }
         }
 
         .march-bracket__logo {
-            width: 45px;
+            width: 30px;
             top: 20px;
             left: 4px;
+
+            @include mq(desktop) {
+                width: 45px;
+            }
         }
 
         .march-bracket__seed {
