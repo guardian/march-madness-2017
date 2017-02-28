@@ -17,6 +17,10 @@ module.exports =  {
             this.selectTab($('.march-tabs__option[data-region="final-four"]'));
         }.bind(this));
 
+        $('.march-bracket__final-four-button').click(function(element) {
+            this.selectTab($('.march-tabs__option[data-region="' + $(element.currentTarget).data('tab') + '"]'))
+        }.bind(this));
+
         $(window).scroll(function() {
             this.onScroll();
         }.bind(this));

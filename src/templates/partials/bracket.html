@@ -54,10 +54,10 @@
 <div class='march-bracket march-bracket--middle'>
     <div class='gs-container'>
         <span class='march-round-label'><strong>Final Four</strong>April 1-3</span>
-        <a class='march-bracket__final-four-button march-bracket__final-four-button--east'>East Regional</a>
-        <a class='march-bracket__final-four-button march-bracket__final-four-button--midwest'>Midwest Regional</a>
-        <a class='march-bracket__final-four-button march-bracket__final-four-button--south'>South Regional</a>
-        <a class='march-bracket__final-four-button march-bracket__final-four-button--west'>West Regional</a>
+        <a data-tab='east' class='march-bracket__final-four-button march-bracket__final-four-button--east'>East Regional</a>
+        <a data-tab='midwest' class='march-bracket__final-four-button march-bracket__final-four-button--midwest'>Midwest Regional</a>
+        <a data-tab='south' class='march-bracket__final-four-button march-bracket__final-four-button--south'>South Regional</a>
+        <a data-tab='west' class='march-bracket__final-four-button march-bracket__final-four-button--west'>West Regional</a>
         <div class='march-round march-round--semis' data-round='5' data-region='east midwest'>
             {{#loop 0 1 1}}
                 {{> templates/partials/matchup index=@index}}
