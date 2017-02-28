@@ -79,7 +79,7 @@
             content: '';
             position: absolute;
             right: 4px;
-            height: 340px;
+            height: 343px;
             bottom: -29px;
             border-left: 1px dotted darken($c-grey, 5%);
 
@@ -180,6 +180,12 @@
 
             &:first-of-type {
                 margin-right: 20px;
+            }
+
+            &:after {
+                @include mq($until: desktop) {
+                    display: none;
+                }
             }
 
             &:first-of-type:after {
