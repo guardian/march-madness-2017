@@ -246,7 +246,7 @@
 
     .march-round--winner {
         position: absolute;
-        top: 88px;
+        top: 170px;
         margin: auto;
         left: 0;
         right: -530px;
@@ -359,6 +359,70 @@
 
     .march-bracket__seed {
         bottom: 1px;
+    }
+
+    .gs-container {
+        @include mq($until: desktop) {
+            padding: 80px 0;
+        }
+    }
+
+    .march-bracket__final-four-button {
+        font-size: 14px;
+        font-family: 'Guardian Sans Web';
+        color: $c-orange;
+        background-image: url('@@assetPath@@/assets/images/arrow-right-orange.svg');
+        background-position: right center;
+        background-repeat: no-repeat;
+        background-size: 28px;
+        padding-right: 26px;
+        position: absolute;
+
+        &:hover {
+            color: $c-black;
+            text-decoration: none;
+            background-image: url('@@assetPath@@/assets/images/arrow-right.svg');
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            border-top: 1px dotted darken($c-grey, 5%);
+            top: 9px;
+            left: -20px;
+        }
+
+        &--east,
+        &--south {
+            left: 24px;
+            top: 40px;
+        }
+
+        &--midwest,
+        &--west {
+            right: 20px;
+            top: 40px;
+
+            &:after {
+                left: auto;
+                right: -20px;
+            }
+        }
+
+        &--east,
+        &--midwest {
+            top: 98px;
+        }
+
+        &--south,
+        &--west {
+            top: 278px;
+        }
+
+        @include mq(desktop) {
+            display: none;
+        }
     }
 }
 
