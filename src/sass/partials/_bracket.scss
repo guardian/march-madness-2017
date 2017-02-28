@@ -262,6 +262,7 @@
         .march-bracket__team {
             border-color: $c-orange;
             height: 52px;
+            pointer-events: none;
 
             @include mq(desktop) {
                 height: 68px;
