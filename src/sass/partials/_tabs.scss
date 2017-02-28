@@ -43,8 +43,7 @@
 
 .march-tabs__option {
     float: left;
-    width: 100px;
-    max-width: 20%;
+    max-width: 100px;
     font-family: 'Guardian Egyptian Web';
     font-weight: 900;
     padding: 4px;
@@ -54,6 +53,13 @@
     color: $c-white;
     cursor: pointer;
     user-select: none;
+    font-size: 14px;
+
+    @include mq(mobileLandscape) {
+        width: 100px;
+        max-width: 20%;
+        font-size: 16px;
+    }
 
     &:hover {
         background-color: darken($c-black, 5%);
