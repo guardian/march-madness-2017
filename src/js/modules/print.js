@@ -28,6 +28,7 @@ module.exports =  {
     },
 
     generateCanvas: function() {
+        console.log('canvaz');
         var canvas = document.getElementById('march-canvas');
         var ctx = canvas.getContext('2d');
 

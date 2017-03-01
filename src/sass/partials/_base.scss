@@ -1,3 +1,23 @@
 #march-canvas {
     display: none;
 }
+
+.march-print-message {
+    font-family: 'Guardian Egyptian Web';
+    font-size: 32px;
+    font-weight: 900;
+    color: $c-orange !important;
+}
+
+@media print {
+    #march-canvas,
+    figure.interactive-atom,
+    figure.element-atom,
+    .march-print-message {
+        display: block !important;
+    }
+
+    .march {
+        display: none;
+    }
+}
