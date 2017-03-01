@@ -19,6 +19,9 @@
 
     @include mq(mobileLandscape) {
         padding: 0 20px;
+    }
+
+    @include mq(phablet) {
         width: calc(100% - 180px);
     }
 
@@ -50,12 +53,16 @@
     padding-top: 12px;
 
     @include mq(tablet) {
+        font-size: 56px;
+    }
+
+    @include mq(desktop) {
         font-size: 72px;
     }
 }
 
 .march-header__content-bottom {
-    @include mq(mobileLandscape) {
+    @include mq(phablet) {
         position: relative;
         z-index: 2;
     }
@@ -75,7 +82,7 @@
     margin-bottom: 12px;
     padding-right: 100px;
 
-    @include mq(mobileLandscape) {
+    @include mq(phablet) {
         padding-right: 0;
     }
 
@@ -99,7 +106,7 @@
     opacity: 0;
     transition: 0.2s ease-out opacity;
 
-    @include mq($until: mobileLandscape) {
+    @include mq($until: phablet) {
         position: absolute;
         bottom: 12px;
         left: 10px;
@@ -149,7 +156,7 @@
     animation: 18s linear slideIn infinite;
     pointer-events: none;
 
-    @include mq(mobileLandscape) {
+    @include mq(phablet) {
         right: -180px;
     }
 
@@ -176,7 +183,7 @@
     .march-share {
         float: right;
 
-        @include mq($until: mobileLandscape) {
+        @include mq($until: phablet) {
             position: absolute;
             bottom: 12px;
             right: 10px;
