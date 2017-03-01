@@ -32,6 +32,7 @@ module.exports =  {
         var ctx = canvas.getContext('2d');
 
         var img = new Image();
+            img.crossOrigin = 'anonymous';
             img.src = '@@assetPath@@/assets/images/printable-bracket.png';
 
         img.onload = function() {
