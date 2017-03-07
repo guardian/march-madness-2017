@@ -12,7 +12,10 @@ module.exports =  {
 
     bindings: function() {
         $('.march-bracket__team').click(function(e) {
-            this.selectTeam(e.currentTarget)
+            this.selectTeam(e.currentTarget);
+        }.bind(this));
+        $('.march-bracket__team').one('click', function() {
+            this.hasBeenEdited();
         }.bind(this));
     },
 
@@ -96,4 +99,10 @@ module.exports =  {
             $('.march-round[data-round="' + (round - 1) + '"] .march-bracket__team[data-team="' + teamName + '"]').removeClass('is-winner');
         }
     },
+
+    hasBeenEdited: function() {
+        $(window).bind('beforeunload', function(event) {
+            return 'Make sure you\'ve printed or shared your picks as they might be lost by leaving';
+        });
+    }
 };
