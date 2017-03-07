@@ -320,6 +320,15 @@
         .march-bracket__team:after {
             display: none;
         }
+
+        .march-bracket__team.is-double {
+            .march-bracket__team-name {
+                font-size: 20px;
+                line-height: 22px;
+                margin-top: 18px;
+                margin-left: 2px;
+            }
+        }
     }
 }
 
@@ -329,7 +338,7 @@
     .march-round-label {
         position: absolute;
         left: 10px;
-        top: 4px;
+        top: 6px;
         font-family: 'Guardian Sans Web';
         font-size: 14px;
         line-height: 20px;
@@ -366,6 +375,14 @@
 
     .march-bracket__seed {
         bottom: 1px;
+    }
+
+    .march-bracket__team.is-double {
+        .march-bracket__team-name {
+            font-size: 14px;
+            line-height: 17px;
+            margin-top: -1px;
+        }
     }
 
     .gs-container {
@@ -553,6 +570,19 @@
 
         &:hover {
             background-color: rgba(0, 0, 0, 0.05);
+        }
+    }
+
+    &.is-double {
+        .march-bracket__logo {
+            display: none;
+        }
+
+        .march-bracket__team-name {
+            padding-left: 0;
+            font-size: 10px;
+            white-space: normal;
+            margin-top: -4px;
         }
     }
 
