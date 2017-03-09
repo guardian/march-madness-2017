@@ -14,7 +14,6 @@ function sortTeams() {
         } else {
             conferenceNum += 1;
             conferences.push(json[i].Conference);
-            console.log('non match');
         }
 
         if (data.regions[conferenceNum] === undefined) {
@@ -26,20 +25,11 @@ function sortTeams() {
     }
 }
 
-function htmlFormatting() {
-    for (var i = 0; i < json.length; i++) {
-        
-    }
-}
-
 module.exports = function getData() {
     json = require('../../scripts/local.json');
     json = json.sheets.Sheet1;
 
     sortTeams();
-    htmlFormatting();
-
-    console.log(data);
 
     return data;
 };
