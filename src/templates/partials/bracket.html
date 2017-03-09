@@ -1,50 +1,51 @@
 <div class='march-bracket march-bracket--top'>
     <div class='gs-container'>
         <div class='march-bracket__inner'>
-            <h2 class='march-bracket__label march-bracket__label--east'>East</h2>
-            <h2 class='march-bracket__label march-bracket__label--midwest'>Midwest</h2>
-            <div class='march-round march-round--first' data-round='1' data-region='east'>
-                {{#each East}}
+            <h2 class='march-bracket__label march-bracket__label--1'>{{ regions.[0].region }}</h2>
+            <div class='march-round march-round--first' data-round='1' data-region='1'>
+                {{#each regions.[0].teams }}
                     {{> templates/partials/matchup index=@index team=@this}}
                 {{/each}}
             </div>
-            <div class='march-round march-round--second' data-round='2' data-region='east'>
+            <div class='march-round march-round--second' data-round='2' data-region='1'>
                 {{#loop 0 7 1}}
                     {{> templates/partials/matchup index=@index}}
                 {{/loop}}
             </div>
-            <div class='march-round march-round--regional-semis' data-round='3' data-region='east'>
+            <div class='march-round march-round--regional-semis' data-round='3' data-region='1'>
                 {{#loop 0 3 1}}
                     {{> templates/partials/matchup index=@index}}
                 {{/loop}}
             </div>
-            <div class='march-round march-round--regional-finals' data-round='4' data-region='east'>
+            <div class='march-round march-round--regional-finals' data-round='4' data-region='1'>
                 {{#loop 0 1 1}}
                     {{> templates/partials/matchup index=@index}}
                 {{/loop}}
             </div>
+
             <div class='march-round march-round--mobile-link'>
                 <a class='march-bracket__progress-button'>
                     Jump to final four
                 </a>
             </div>
-            <div class='march-round march-round--regional-finals march-round--reverse' data-round='4' data-region='midwest'>
+            <h2 class='march-bracket__label march-bracket__label--2'>{{ regions.[1].region }}</h2>
+            <div class='march-round march-round--regional-finals march-round--reverse' data-round='4' data-region='2'>
                 {{#loop 0 1 1}}
                     {{> templates/partials/matchup index=@index}}
                 {{/loop}}
             </div>
-            <div class='march-round march-round--regional-semis march-round--reverse' data-round='3' data-region='midwest'>
+            <div class='march-round march-round--regional-semis march-round--reverse' data-round='3' data-region='2'>
                 {{#loop 0 3 1}}
                     {{> templates/partials/matchup index=@index}}
                 {{/loop}}
             </div>
-            <div class='march-round march-round--second march-round--reverse' data-round='2' data-region='midwest'>
+            <div class='march-round march-round--second march-round--reverse' data-round='2' data-region='2'>
                 {{#loop 0 7 1}}
                     {{> templates/partials/matchup index=@index}}
                 {{/loop}}
             </div>
-            <div class='march-round march-round--first march-round--reverse' data-round='1' data-region='midwest'>
-                {{#each Midwest}}
+            <div class='march-round march-round--first march-round--reverse' data-round='1' data-region='2'>
+                {{#each regions.[1].teams }}
                     {{> templates/partials/matchup index=@index team=@this}}
                 {{/each}}
             </div>
@@ -54,11 +55,11 @@
 <div class='march-bracket march-bracket--middle'>
     <div class='gs-container'>
         <span class='march-round-label'><strong>Final Four</strong>April 1-3</span>
-        <a data-tab='east' class='march-bracket__final-four-button march-bracket__final-four-button--east'>East Regional</a>
-        <a data-tab='midwest' class='march-bracket__final-four-button march-bracket__final-four-button--midwest'>Midwest Regional</a>
-        <a data-tab='south' class='march-bracket__final-four-button march-bracket__final-four-button--south'>South Regional</a>
-        <a data-tab='west' class='march-bracket__final-four-button march-bracket__final-four-button--west'>West Regional</a>
-        <div class='march-round march-round--semis' data-round='5' data-region='east midwest'>
+        <a data-tab='{{ regions.[0].region }}' class='march-bracket__final-four-button march-bracket__final-four-button--1'>{{ regions.[0].region }} Regional</a>
+        <a data-tab='{{ regions.[1].region }}' class='march-bracket__final-four-button march-bracket__final-four-button--2'>{{ regions.[1].region }} Regional</a>
+        <a data-tab='{{ regions.[2].region }}' class='march-bracket__final-four-button march-bracket__final-four-button--3'>{{ regions.[2].region }} Regional</a>
+        <a data-tab='{{ regions.[3].region }}' class='march-bracket__final-four-button march-bracket__final-four-button--4'>{{ regions.[3].region }} Regional</a>
+        <div class='march-round march-round--semis' data-round='5' data-region='1 2'>
             {{#loop 0 1 1}}
                 {{> templates/partials/matchup index=@index}}
             {{/loop}}
@@ -72,7 +73,7 @@
             <div class='march-bracket__matchup' data-match-number='{{ match-number index }}'><!-- is closed in matchup.html -->
             {{> templates/partials/matchup }}
         </div>
-        <div class='march-round march-round--semis' data-round='5' data-region='south west'>
+        <div class='march-round march-round--semis' data-round='5' data-region='3 4'>
             {{#loop 0 1 1}}
                 {{> templates/partials/matchup index=@index}}
             {{/loop}}
@@ -82,24 +83,23 @@
 <div class='march-bracket march-bracket--bottom'>
     <div class='gs-container'>
         <div class='march-bracket__inner'>
-            <h2 class='march-bracket__label march-bracket__label--south'>South</h2>
-            <h2 class='march-bracket__label march-bracket__label--west'>West</h2>
-            <div class='march-round march-round--first' data-round='1' data-region='south'>
-                {{#each South}}
+            <h2 class='march-bracket__label march-bracket__label--3'>{{ regions.[2].region }}</h2>
+            <div class='march-round march-round--first' data-round='1' data-region='3'>
+                {{#each regions.[2].teams }}
                     {{> templates/partials/matchup index=@index team=@this}}
                 {{/each}}
             </div>
-            <div class='march-round march-round--second' data-round='2' data-region='south'>
+            <div class='march-round march-round--second' data-round='2' data-region='3'>
                 {{#loop 0 7 1}}
                     {{> templates/partials/matchup index=@index}}
                 {{/loop}}
             </div>
-            <div class='march-round march-round--regional-semis' data-round='3' data-region='south'>
+            <div class='march-round march-round--regional-semis' data-round='3' data-region='3'>
                 {{#loop 0 3 1}}
                     {{> templates/partials/matchup index=@index}}
                 {{/loop}}
             </div>
-            <div class='march-round march-round--regional-finals' data-round='4' data-region='south'>
+            <div class='march-round march-round--regional-finals' data-round='4' data-region='3'>
                 {{#loop 0 1 1}}
                     {{> templates/partials/matchup index=@index}}
                 {{/loop}}
@@ -109,23 +109,24 @@
                     Jump to final four
                 </a>
             </div>
-            <div class='march-round march-round--regional-finals march-round--reverse test' data-round='4' data-region='west'>
+            <h2 class='march-bracket__label march-bracket__label--4'>{{ regions.[3].region }}</h2>
+            <div class='march-round march-round--regional-finals march-round--reverse test' data-round='4' data-region='4'>
                 {{#loop 0 1 1}}
                     {{> templates/partials/matchup index=@index}}
                 {{/loop}}
             </div>
-            <div class='march-round march-round--regional-semis march-round--reverse' data-round='3' data-region='west'>
+            <div class='march-round march-round--regional-semis march-round--reverse' data-round='3' data-region='4'>
                 {{#loop 0 3 1}}
                     {{> templates/partials/matchup index=@index}}
                 {{/loop}}
             </div>
-            <div class='march-round march-round--second march-round--reverse' data-round='2' data-region='west'>
+            <div class='march-round march-round--second march-round--reverse' data-round='2' data-region='4'>
                 {{#loop 0 7 1}}
                     {{> templates/partials/matchup index=@index}}
                 {{/loop}}
             </div>
-            <div class='march-round march-round--first march-round--reverse' data-round='1' data-region='west'>
-                {{#each West}}
+            <div class='march-round march-round--first march-round--reverse' data-round='1' data-region='4'>
+                {{#each regions.[3].teams }}
                     {{> templates/partials/matchup index=@index team=@this}}
                 {{/each}}
             </div>

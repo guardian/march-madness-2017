@@ -70,17 +70,15 @@ module.exports =  {
             round = $(team).parent().parent().data('round'),
             teamName = $(team).attr('data-team');
 
-            console.log(classList);
-            console.log($(team));
-
         if (round === 6) {
             $('.march-round--winner .march-bracket__team').attr('data-team', teamName).html(html).addClass(classList);
         } else if (round === 5) {
-            var isFirst = region === 'east midwest';
+            var isFirst = region === '1 2';
             $('.march-round--final .march-bracket__team:' + (isFirst ? 'first-of-type' : 'last-of-type')).attr('data-team', teamName).html(html).addClass(classList);
         } else if (round === 4) {
-            var isTop = region === 'east' || region === 'midwest';
-            var isFirst = region === 'east' || region === 'south';
+            var isTop = region === 1 || region === 2;
+            var isFirst = region === 1 || region === 3;
+
             $('.march-round--semis:' + (isTop ? 'first-of-type' : 'last-of-type') + ' .march-bracket__matchup .march-bracket__team:' + (isFirst ? 'first-of-type' : 'last-of-type')).attr('data-team', teamName).html(html).addClass(classList);
         } else {
             $('.march-round[data-region="' + region + '"][data-round="' + (round + 1) + '"] .march-bracket__matchup[data-match-number="' + Math.ceil(matchNumber / 2)  + '"] .march-bracket__team:' + (isFirst ? 'first-of-type' : 'last-of-type')).attr('data-team', teamName).html(html).addClass(classList);

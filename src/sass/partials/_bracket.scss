@@ -417,14 +417,14 @@
             left: -20px;
         }
 
-        &--east,
-        &--south {
+        &--1,
+        &--3 {
             left: 24px;
             top: 40px;
         }
 
-        &--midwest,
-        &--west {
+        &--2,
+        &--4 {
             right: 20px;
             top: 40px;
 
@@ -434,13 +434,13 @@
             }
         }
 
-        &--east,
-        &--midwest {
+        &--1,
+        &--2 {
             top: 98px;
         }
 
-        &--south,
-        &--west {
+        &--3,
+        &--4 {
             top: 278px;
         }
 
@@ -518,8 +518,8 @@
     }
 }
 
-.march-bracket__label--midwest,
-.march-bracket__label--west {
+.march-bracket__label--2,
+.march-bracket__label--4 {
     left: auto;
 
     @include mq(desktop) {
@@ -638,30 +638,30 @@
         }
     }
 
-    .march--east .march-bracket--top,
-    .march--midwest .march-bracket--top {
+    .march--1 .march-bracket--top,
+    .march--2 .march-bracket--top {
         display: block;
     }
 
-    .march--south .march-bracket--bottom,
-    .march--west .march-bracket--bottom {
+    .march--3 .march-bracket--bottom,
+    .march--4 .march-bracket--bottom {
         display: block;
     }
 
-    .march--east .march-round[data-region='east'],
-    .march--midwest .march-round[data-region='midwest'],
-    .march--south .march-round[data-region='south'],
-    .march--west .march-round[data-region='west'] {
+    .march--1 .march-round[data-region='1'],
+    .march--2 .march-round[data-region='2'],
+    .march--3 .march-round[data-region='3'],
+    .march--4 .march-round[data-region='4'] {
         display: flex;
     }
 
-    .march--midwest .march-bracket__inner,
-    .march--west .march-bracket__inner {
+    .march--2 .march-bracket__inner,
+    .march--4 .march-bracket__inner {
         flex-direction: row-reverse;
     }
 
-    .march--midwest,
-    .march--west {
+    .march--2,
+    .march--4 {
         .march-bracket__inner {
             flex-direction: row-reverse;
         }

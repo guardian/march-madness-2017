@@ -1,9 +1,8 @@
 <ul class='march-tabs'>
     <div class='gs-container'>
-        <li class='march-tabs__option is-selected' data-region='east'>East</li>
-        <li class='march-tabs__option' data-region='midwest'>Midwest</li>
-        <li class='march-tabs__option' data-region='south'>South</li>
-        <li class='march-tabs__option' data-region='west'>West</li>
+        {{#each regions }}
+            <li class='march-tabs__option {{#if @first}} is-selected{{/if}}' data-region='{{inc @index}}'>{{ this.region }}</li>
+        {{/each}}
         <li class='march-tabs__option' data-region='final-four'>Final Four</li>
     </div>
 </ul>

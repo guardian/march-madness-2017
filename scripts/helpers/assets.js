@@ -49,6 +49,12 @@ module.exports = {
                 return opts.inverse(this);
         });
 
+        handlebars.registerHelper('inc', function(value, options)
+        {
+            console.log(value);
+            return parseInt(value) + 1;
+        });
+
         handlebars.registerHelper('loop', function(from, to, inc, block) {
                 block = block || {fn: function () { return arguments[0]; }};
 
