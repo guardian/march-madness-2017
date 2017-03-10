@@ -12,13 +12,14 @@
 .march-header__content {
     position: relative;
     padding: 0 10px;
-    height: 350px;
+    height: 420px;
     z-index: 2;
     width: 100%;
     box-sizing: border-box;
 
     @include mq(mobileLandscape) {
         padding: 0 20px;
+        height: 350px;
     }
 
     @include mq(phablet) {
@@ -51,9 +52,11 @@
     font-size: 3spx;
     line-height: 1;
     padding-top: 12px;
+    margin: 0;
 
     @include mq(tablet) {
         font-size: 56px;
+        width: calc(100% + 100px);
     }
 
     @include mq(desktop) {
@@ -76,11 +79,16 @@
 
 .march-header__intro {
     font-family: 'Guardian Egyptian Web';
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 14px;
+    line-height: 18px;
     color: $c-white;
     margin-bottom: 12px;
     padding-right: 100px;
+
+    @include mq(mobileLandscape) {
+        font-size: 16px;
+        line-height: 20px;
+    }
 
     @include mq(phablet) {
         padding-right: 0;
@@ -93,18 +101,25 @@
 }
 
 .march-header__print-button {
+    position: relative;
+    z-index: 4;
     font-family: 'Guardian Sans Web';
     font-size: 16px;
     color: $c-black;
     background-color: $c-orange;
     background-image: url('@@assetPath@@/assets/images/arrow-right.svg');
     background-repeat: no-repeat;
-    background-position: right 4px center;
+    background-position: right center;
     border-radius: 19px;
-    padding: 8px 40px 8px 12px;
+    padding: 8px 29px 8px 8px;
     display: inline-block;
     opacity: 0;
     transition: 0.2s ease-out opacity;
+
+    @include mq(mobileLandscape) {
+        padding: 8px 32px 8px 12px;
+        background-position: right 2px center;
+    }
 
     @include mq($until: phablet) {
         position: absolute;
