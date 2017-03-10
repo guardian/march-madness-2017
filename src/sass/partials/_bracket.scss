@@ -689,6 +689,10 @@
         overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
 
+        .ios, .iOS, .android & {
+            margin-bottom: 56px;
+        }
+
         & > * {
             width: 768px;
         }
