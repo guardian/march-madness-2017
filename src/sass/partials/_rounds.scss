@@ -73,9 +73,17 @@
 }
 
 .march-round:first-of-type {
-    padding-left: 20px;
+    padding-left: 10px;
+
+    @include mq(mobileLandscape) {
+        padding-left: 20px;
+    }
 }
 
 .march-round:last-of-type {
     padding-right: 20px;
+
+    @include mq(mobileLandscape) {
+        padding-right: 20px;
+    }
 }
