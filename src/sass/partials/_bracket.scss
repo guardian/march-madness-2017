@@ -13,7 +13,7 @@
             position: absolute;
             top: 26px;
             right: -20px;
-            border-top: 1px dotted darken($c-grey, 5%);
+            border-top: 1px dotted darken($c-grey, 8%);
             width: 20px;
             z-index: 2;
         }
@@ -24,7 +24,7 @@
             right: -1px;
             bottom: -11px;
             height: 20px;
-            border-left: 1px dotted darken($c-grey, 5%);
+            border-left: 1px dotted darken($c-grey, 8%);
         }
     }
 
@@ -41,7 +41,7 @@
             left: -1px;
             top: -11px;
             height: 11px;
-            border-left: 1px dotted darken($c-grey, 5%);
+            border-left: 1px dotted darken($c-grey, 8%);
         }
 
         .march-bracket__team:last-of-type:before {
@@ -63,7 +63,7 @@
             left: -1px;
             top: -50px;
             height: 50px;
-            border-left: 1px dotted darken($c-grey, 5%);
+            border-left: 1px dotted darken($c-grey, 8%);
         }
 
         .march-bracket__team:last-of-type:before {
@@ -81,7 +81,7 @@
             right: 4px;
             height: 343px;
             bottom: -29px;
-            border-left: 1px dotted darken($c-grey, 5%);
+            border-left: 1px dotted darken($c-grey, 8%);
 
             @include mq($until: desktop) {
                 display: none;
@@ -94,7 +94,7 @@
             left: -1px;
             top: -130px;
             height: 130px;
-            border-left: 1px dotted darken($c-grey, 5%);
+            border-left: 1px dotted darken($c-grey, 8%);
         }
 
         .march-bracket__team:last-of-type:before {
@@ -157,7 +157,7 @@
             display: flex;
 
             &:after {
-                border: 1px dotted darken($c-grey, 5%);
+                border: 1px dotted darken($c-grey, 8%);
                 border-top: 0;
                 height: 10px;
                 top: auto;
@@ -170,7 +170,7 @@
 
         &:last-of-type .march-bracket__matchup:after {
             border-bottom: 0;
-            border-top: 1px dotted darken($c-grey, 5%);
+            border-top: 1px dotted darken($c-grey, 8%);
             bottom: auto;
             top: -10px;
         }
@@ -194,7 +194,7 @@
                 width: 5px;
                 right: -5px;
                 bottom: 16px;
-                border-top: 1px dotted darken($c-grey, 5%);
+                border-top: 1px dotted darken($c-grey, 8%);
             }
 
             &:last-of-type:after {
@@ -205,7 +205,7 @@
                 width: 5px;
                 left: -5px;
                 bottom: 16px;
-                border-top: 1px dotted darken($c-grey, 5%);
+                border-top: 1px dotted darken($c-grey, 8%);
             }
         }
     }
@@ -226,7 +226,7 @@
                 left: 0;
                 right: 0;
                 margin: auto;
-                border-left: 1px dotted darken($c-grey, 5%);
+                border-left: 1px dotted darken($c-grey, 8%);
             }
         }
 
@@ -412,7 +412,7 @@
             content: '';
             position: absolute;
             width: 16px;
-            border-top: 1px dotted darken($c-grey, 5%);
+            border-top: 1px dotted darken($c-grey, 8%);
             top: 9px;
             left: -20px;
         }
@@ -550,7 +550,7 @@
 
 .march-bracket__team {
     position: relative;
-    border: 1px solid darken($c-grey, 5%);
+    border: 1px solid darken($c-grey, 8%);
     border-top: 0;
     padding: 2px;
     width: 100%;
@@ -591,7 +591,7 @@
     }
 
     &.is-winner {
-        background-color: darken($c-grey, 5%);
+        background-color: darken($c-grey, 8%);
     }
 }
 
