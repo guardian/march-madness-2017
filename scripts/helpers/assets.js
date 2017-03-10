@@ -51,7 +51,6 @@ module.exports = {
 
         handlebars.registerHelper('inc', function(value, options)
         {
-            console.log(value);
             return parseInt(value) + 1;
         });
 

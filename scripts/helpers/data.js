@@ -10,7 +10,7 @@ function sortTeams() {
     for (var i = 0; i < json.length; i++) {
 
         if (conferences.indexOf(json[i].Conference) > -1) {
-            console.log('match');
+//            console.log('match');
         } else {
             conferenceNum += 1;
             conferences.push(json[i].Conference);
