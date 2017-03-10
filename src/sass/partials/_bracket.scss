@@ -688,15 +688,16 @@
         overflow-x: scroll;
         overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
-
-        .ios, .iOS, .android & {
-            margin-bottom: 56px;
-        }
+        padding-bottom: 56px;
 
         & > * {
             width: 768px;
         }
     }
+
+    .js-on .march-scroll {
+        padding-bottom: 0;
+    } 
 }
 
 .march-round--mobile-link {
