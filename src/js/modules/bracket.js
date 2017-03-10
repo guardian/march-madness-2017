@@ -2,7 +2,8 @@ var $ = require('../vendor/jquery.js');
 var passcode = require('../modules/passcode.js');
 var bar = require('../modules/bar.js');
 
-var init = true;
+var init = true,
+    results = 'qlwy/Bikwy/Bqlwy/Bqlwy/Bmlwy/Bqlwy/Bq08x/Bqlwy/B';
 
 module.exports =  {
     init: function() {
@@ -20,7 +21,7 @@ module.exports =  {
     },
 
     restoreProgress: function() {
-        var id = document.location.href.split('#')[1];
+        var id = document.location.href.split('#')[1] || results;
         if (id) {
             var data = passcode.parseData(id);
             $(passcode.orderMatchups()).each(function(i, matchup) {
