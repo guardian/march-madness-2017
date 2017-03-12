@@ -42,7 +42,15 @@ module.exports =  {
             ctx.font = '14px "Guardian Sans Web"';
 
             for (var i = 0; i < data.length; i++) {
+                ctx.fillStyle = '#000000';
+                ctx.textAlign = 'left';
                 ctx.fillText(data[i].team, data[i].x, data[i].y);
+
+                if (data[i].x === 40 || data[i].x === 1480) {
+                    ctx.fillStyle = '#999999';
+                    ctx.textAlign = 'right'
+                    ctx.fillText(data[i].seed, data[i].x + 132, data[i].y);
+                }
             }
 
             this.exportBracket(canvas.toDataURL('image/jpeg', 1.0));
@@ -51,7 +59,7 @@ module.exports =  {
 
     cleanTeamName: function(teamName) {
         teamName = teamName.replace('/ ', '/');
-        teamName = (teamName.length > 23 ? teamName.substring(0, 20) + String.fromCharCode(8230) : teamName);
+        teamName = (teamName.length > 20 ? teamName.substring(0, 18) + String.fromCharCode(8230) : teamName);
         return teamName;
     },
 
@@ -64,6 +72,7 @@ module.exports =  {
                 isFilled: $(element).hasClass('is-filled'),
                 isWinner: $(element).hasClass('is-winner'),
                 team: this.cleanTeamName($(element).find('.march-bracket__team-name').text()),
+                seed: $(element).find('.march-bracket__seed').text(),
                 x: coords[0][0],
                 y: coords[0][1]
             });
