@@ -3,7 +3,7 @@ var passcode = require('../modules/passcode.js');
 var bar = require('../modules/bar.js');
 
 var init = true,
-    results = 'qlwy/Bikwy/Bqlwy/Bqlwy/Bmlwy/Bqlwy/Bq08x/Bqlwy/B';
+    results = 'qlwy/Bqlwy/Bqlwy/Bqlwy/Bqlwy/Bqlwy/Bqlwy/Bqlwy/B';
 
 module.exports =  {
     init: function() {
