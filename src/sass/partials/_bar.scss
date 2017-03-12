@@ -102,3 +102,28 @@
         opacity: 1;
     }
 }
+
+.is-mobile-unprintable {
+    .march-bar__share {
+        width: calc(100% - 20px);
+
+        @include mq(mobileLandscape) {
+            width: calc(100% - 40px);
+        }
+    }
+
+    .march-bar__label {
+        display: block;
+    }
+
+    .march-bar__url-input {
+        @include mq(mobileLandscape) {
+            display: block;
+                width: 130px;
+        }
+    }
+
+    .march-bar__print-button {
+        display: none;
+    }
+}
