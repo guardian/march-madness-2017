@@ -7,6 +7,7 @@ var pageUrl = window.location.href.split('#')[0],
 module.exports =  {
     init: function() {
         this.setLinks('.march-header');
+        this.setLinks('.march-bar');
     },
 
     setLinks: function(parent, withID = false) {

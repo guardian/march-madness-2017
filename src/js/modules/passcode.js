@@ -1,4 +1,5 @@
 var $ = require('../vendor/jquery.js');
+var share = require('../modules/share.js');
 var vlq = require('vlq');
 
 var pageUrl = document.location.href.split('#')[0],
@@ -7,6 +8,7 @@ var pageUrl = document.location.href.split('#')[0],
 module.exports =  {
     updateUrl: function() {
         history.pushState('', document.title, pageUrl + '#' + this.getData());
+        share.setLinks('.march-bar', true);
     },
 
     getData: function() {

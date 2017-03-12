@@ -104,8 +104,14 @@ module.exports =  {
     },
 
     hasBeenEdited: function() {
-        $(window).bind('beforeunload', function(event) {
-            return 'Make sure you\'ve printed or shared your picks as they might be lost by leaving';
-        });
+        $(window).on('mousedown', function() {
+            $(window).off('beforeunload');
+        }.bind(this));
+
+        $(window).on('mouseleave', function() {
+            $(window).bind('beforeunload', function(event) {
+                return 'Make sure you\'ve printed or shared your picks as they might be lost by leaving';
+            });
+        }.bind(this));
     }
 };
