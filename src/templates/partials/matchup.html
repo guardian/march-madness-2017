@@ -3,8 +3,12 @@
 {{/if_even}}
 
     {{#if team}}
-    <div class='march-bracket__team is-filled {{#if Logo}}{{ else }}is-double{{/if}} ' data-team='{{ Team }}'>
-        <img class='march-bracket__logo' src='@@assetPath@@/assets/badges/{{ Logo }}' />
+    <div class='march-bracket__team is-filled {{#if isDouble}}is-double{{/if}} ' data-team='{{ Team }}'>
+        {{#if isDouble}}
+
+        {{else}}
+        <img class='march-bracket__logo' src='@@assetPath@@/assets/badges/{{ Logo }}.png' />
+        {{/if}}
         <span class='march-bracket__team-name'>{{{ Team }}}</span>
         <span class='march-bracket__seed'>{{ Seed }}</span>
     </div>

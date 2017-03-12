@@ -11,6 +11,21 @@ function breakDoubleTeams() {
     }
 }
 
+function createImageNames() {
+    for (var i = 0; i < json.length; i++) {
+        json[i].Logo = json[i].Team.replace(/ /g, '-').replace('\'', '').toLowerCase();
+    }
+}
+
+function isDouble() {
+    for (var i = 0; i < json.length; i++) {
+        if (json[i].Team.indexOf('/') != -1) {
+
+            json[i].isDouble = true;
+        }
+    }
+}
+
 function sortTeams() {
     var conferenceNum = -1;
     for (var i = 0; i < json.length; i++) {
@@ -37,6 +52,8 @@ module.exports = function getData() {
     json = json.sheets.Sheet1;
 
     breakDoubleTeams();
+    createImageNames();
+    isDouble();
     sortTeams();
 
     return data;
