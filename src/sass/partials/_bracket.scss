@@ -692,16 +692,11 @@
         overflow-x: scroll;
         overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
-        padding-bottom: 56px;
 
         & > * {
             width: 768px;
         }
     }
-
-    .js-on .march-scroll {
-        padding-bottom: 0;
-    } 
 }
 
 .march-round--mobile-link {
