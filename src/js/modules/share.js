@@ -20,7 +20,7 @@ module.exports =  {
     },
 
     getTwitterLink: function(withId) {
-        return 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(title) + 
+        return 'https://twitter.com/intent/tweet?text=' + (withId ? encodeURIComponent('Here\'s my #MarchMadness bracket ') : encodeURI(title)) + 
                 '&url=' + encodeURIComponent(pageUrl + (withId ? '#' + id : '') + '?CMP=share_btn_tw');
     },
 

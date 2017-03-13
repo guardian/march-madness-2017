@@ -23,6 +23,7 @@ module.exports =  {
     restoreProgress: function() {
         var id = document.location.href.split('#')[1] || results;
         if (id) {
+            id = id.split('?')[0];
             var data = passcode.parseData(id);
             $(passcode.orderMatchups()).each(function(i, matchup) {
                 if (data[i] == '1') {

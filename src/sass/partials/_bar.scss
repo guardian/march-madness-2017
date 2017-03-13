@@ -51,6 +51,7 @@
     background-color: $c-off-white;
     flex-grow: 1;
     display: none;
+    text-align: right;
 
     @include mq(phablet) {
         display: block;
