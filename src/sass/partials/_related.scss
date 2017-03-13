@@ -1,0 +1,153 @@
+.march-related {
+    position: relative;
+    overflow: hidden;
+    background: $c-black;
+
+    .gs-container {
+        padding: 0 10px;
+        box-sizing: border-box;
+        border-top: 1px solid $c-orange;
+
+        @include mq(mobileLandscape) {
+            padding: 0 20px;
+        }
+    }
+}
+
+.march-related__title {
+    color: $c-orange;
+    font-size: 24px;
+    font-family: 'Guardian Egyptian Web';
+    font-weight: 700;
+    margin-bottom: 12px;
+
+    @include mq(desktop) {
+        font-size: 38px;
+        margin-bottom: 24px;
+    }
+}
+
+.march-related__links {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    margin-bottom: 24px;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include mq(tablet) {
+        width: 640px;
+        overflow: auto;
+    }
+
+    @include mq(desktop) {
+        margin-bottom: 48px;
+    }
+
+    @include mq(wide) {
+        width: 960px;
+    }
+}
+
+.march-related__link {
+    position: relative;
+    font-family: 'Guardian Egyptian Web';
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.1;
+    width: 100%;
+    margin-bottom: 24px;
+    padding-top: 4px;
+    flex-basis: auto;
+    border-top: 1px solid lighten($c-black, 10%);
+    padding-right: 60px;
+
+    @include mq(tablet) {
+        width: 300px;
+        padding-right: 0;
+        margin-right: 20px;
+    }
+
+    @include mq(desktop) {
+        font-size: 22px;
+    }
+
+    a {
+        position: relative;
+        color: $c-white;
+        display: inline-block;
+        width: 100%;
+
+        @include mq(tablet) {
+            width: 220px;
+        }
+    }
+
+    a:hover {
+        text-decoration: none;
+
+        span {
+            color: darken($c-orange, 5%);
+        }
+    }
+
+    a:after {
+        content: '';
+        position: absolute;
+        right: -60px;
+        top: 4px;
+        bottom: 0;
+        margin: auto;
+        display: block;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        background-color: $c-orange;
+        background-image: url('@@assetPath@@/assets/images/arrow-right.svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+    }
+
+    a:hover:after {
+        background-color: darken($c-orange, 5%);
+    }
+
+    span {
+        color: $c-orange;
+        display: block;
+    }
+}
+
+.march-related__button {
+    position: relative;
+    z-index: 4;
+    font-family: 'Guardian Sans Web';
+    font-size: 16px;
+    color: $c-black;
+    background-color: $c-orange;
+    background-image: url('@@assetPath@@/assets/images/arrow-right.svg');
+    background-repeat: no-repeat;
+    background-position: right 2px center;
+    border-radius: 19px;
+    padding: 8px 64px 8px 12px;
+    display: inline-block;
+    transition: 0.2s ease-out opacity;
+    margin-bottom: 12px;
+
+    &:hover {
+        text-decoration: none;
+        background-color: darken($c-orange, 5%);
+    }
+}
+
+.march-related__image {
+    position: absolute;
+    bottom: -100px;
+    right: 20px;
+    display: none;
+
+    @include mq(desktop) {
+        display: block;
+    }
+}
