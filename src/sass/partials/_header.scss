@@ -13,14 +13,14 @@
 .march-header__content {
     position: relative;
     padding: 0 10px;
-    height: 420px;
+    height: 520px;
     z-index: 2;
     width: 100%;
     box-sizing: border-box;
 
     @include mq(mobileLandscape) {
         padding: 0 20px;
-        height: 350px;
+        height: 400px;
     }
 
     @include mq(phablet) {
@@ -95,8 +95,8 @@
     }
 
     @include mq(tablet) {
-        font-size: 20px;
-        line-height: 24px;
+        font-size: 18px;
+        line-height: 22px;
     }
 }
 

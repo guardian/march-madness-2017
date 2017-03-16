@@ -26,6 +26,8 @@ module.exports =  {
         });
 
         data = data.join('').match(/.{1,8}/g);
+        console.log(data);
+        console.log('hey');
         return vlq.encode(data);
     },
 
@@ -36,10 +38,25 @@ module.exports =  {
     orderMatchups: function() {
         var $matchups = $();
 
-        for (var i = 1; i < 8; i++) {
-            $('.march-round[data-round="'+ i + '"] .march-bracket__matchup').each(function(index, element) {
+        for (var round = 1; round < 8; round++) {
+            $('.march-round[data-region="1"][data-round="'+ round + '"] .march-bracket__matchup').each(function(index, element) {
                 $matchups.push.apply($matchups, $(element));
             });
+            $('.march-round[data-region="3"][data-round="'+ round + '"] .march-bracket__matchup').each(function(index, element) {
+                $matchups.push.apply($matchups, $(element));
+            });
+            $('.march-round[data-region="2"][data-round="'+ round + '"] .march-bracket__matchup').each(function(index, element) {
+                $matchups.push.apply($matchups, $(element));
+            });
+            $('.march-round[data-region="4"][data-round="'+ round + '"] .march-bracket__matchup').each(function(index, element) {
+                $matchups.push.apply($matchups, $(element));
+            });
+        }
+
+        for (var round = 5; round < 8; round++) {
+            $('.march-round[data-round="' + round + '"] .march-bracket__matchup').each(function(index, element) {
+                $matchups.push.apply($matchups, $(element));
+            })
         }
 
         return $matchups;
