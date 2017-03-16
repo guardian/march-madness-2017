@@ -98,6 +98,17 @@
         font-size: 18px;
         line-height: 22px;
     }
+
+    a {
+        color: $c-orange;
+        border-bottom: $c-white 1px solid;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: none;
+            border-bottom-color: $c-orange;
+        }
+    }
 }
 
 .march-header__print-button {
