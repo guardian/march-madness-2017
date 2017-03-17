@@ -7,7 +7,7 @@ var init = true,
 
 module.exports =  {
     init: function() {
-        this.restoreProgress();
+        this.getId();
         this.bindings();
     },
 
@@ -20,8 +20,15 @@ module.exports =  {
         }.bind(this));
     },
 
-    restoreProgress: function() {
-        var id = document.location.href.split('#')[1] || results;
+    getId: function() {
+        if (document.location.href.split('#')[1]) {
+            this.restoreProgress(document.location.href.split('#')[1]);
+        } else {
+            this.getResults();
+        }
+    },
+
+    restoreProgress: function(id) {
         if (id) {
             id = id.split('?')[0];
             var data = passcode.parseData(id);
@@ -36,6 +43,20 @@ module.exports =  {
             bar.update();
         }
         init = false;
+    },
+
+    getResults: function() {
+        $.getJSON('https://interactive.guim.co.uk/docsdata-test/1LkZgj-QVZ8Ep4QIHZh6rAIKAvmgcZjnAte-_o4TD31I.json', function(data) {
+            var id = data.sheets.Sheet1[0].mens;
+            this.restoreProgress(id);
+            if (id) {
+                this.lockProgress();
+            }
+        }.bind(this));
+    },
+
+    lockProgress: function() {
+        $('.march').addClass('is-locked');
     },
 
     selectTeam: function(team) {

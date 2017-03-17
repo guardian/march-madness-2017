@@ -724,3 +724,9 @@
         }
     }
 }
+
+.is-locked {
+    .march-bracket__team {
+        pointer-events: none;
+    }
+}
