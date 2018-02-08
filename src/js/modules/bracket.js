@@ -2,8 +2,7 @@ var $ = require('../vendor/jquery.js');
 var passcode = require('../modules/passcode.js');
 var bar = require('../modules/bar.js');
 
-var init = true,
-    results = 'qvil/Bqlwy/Bq/rgZqjpx/Bqlwy/Bqlwy/Bqlwy/Bqlwy/B';
+var init = true;
 
 module.exports =  {
     init: function() {
@@ -23,8 +22,6 @@ module.exports =  {
     getId: function() {
         if (document.location.href.split('#')[1]) {
             this.restoreProgress(document.location.href.split('#')[1]);
-        } else {
-            this.getResults();
         }
     },
 
@@ -42,21 +39,6 @@ module.exports =  {
             bar.show();
             bar.update();
         }
-        init = false;
-    },
-
-    getResults: function() {
-        $.getJSON('https://interactive.guim.co.uk/docsdata-test/1LkZgj-QVZ8Ep4QIHZh6rAIKAvmgcZjnAte-_o4TD31I.json', function(data) {
-            var id = data.sheets.Sheet1[0].mens;
-            this.restoreProgress(id);
-            if (id) {
-                this.lockProgress();
-            }
-        }.bind(this));
-    },
-
-    lockProgress: function() {
-        $('.march').addClass('is-locked');
     },
 
     selectTeam: function(team) {
@@ -77,11 +59,10 @@ module.exports =  {
             $(team).addClass('is-winner');
             this.progressWinner(team);
         }
-        if (init === false) {
-            passcode.updateUrl();
-            bar.show();
-            bar.update();
-        }
+
+        passcode.updateUrl();
+        bar.show();
+        bar.update();
     },
 
     progressWinner: function(team) {

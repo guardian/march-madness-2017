@@ -26,8 +26,6 @@ module.exports =  {
         });
 
         data = data.join('').match(/.{1,8}/g);
-        console.log(data);
-        console.log('hey');
         return vlq.encode(data);
     },
 
