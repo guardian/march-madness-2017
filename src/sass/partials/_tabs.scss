@@ -4,7 +4,7 @@
     list-style: none;
     overflow: auto;
     background-color: $c-black;
-    border-bottom: 1px solid $c-orange;
+    border-bottom: 1px solid $c-blue;
 
     @include mq(desktop) {
         display: none;
@@ -66,7 +66,7 @@
     }
 
     &.is-selected {
-        background-color: $c-orange;
-        border-right-color: $c-orange;
+        background-color: $c-blue;
+        border-right-color: $c-blue;
     }
 }

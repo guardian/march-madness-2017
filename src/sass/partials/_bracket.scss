@@ -266,7 +266,7 @@
         }
 
         .march-bracket__team {
-            border-color: $c-orange;
+            border-color: $c-blue;
             height: 52px;
             pointer-events: none;
 
@@ -394,7 +394,7 @@
     .march-bracket__final-four-button {
         font-size: 14px;
         font-family: 'Guardian Sans Web';
-        color: $c-orange;
+        color: $c-blue;
         background-image: url('@@assetPath@@/assets/images/arrow-right-orange.svg');
         background-position: right center;
         background-repeat: no-repeat;
@@ -710,7 +710,7 @@
     .march-bracket__progress-button {
         font-size: 14px;
         font-family: 'Guardian Sans Web';
-        color: $c-orange;
+        color: $c-blue;
         background-image: url('@@assetPath@@/assets/images/arrow-right-orange.svg');
         background-position: right center;
         background-repeat: no-repeat;

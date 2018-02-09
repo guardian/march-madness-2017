@@ -6,7 +6,7 @@
     .gs-container {
         padding: 0 10px;
         box-sizing: border-box;
-        border-top: 1px solid $c-orange;
+        border-top: 1px solid $c-blue;
 
         @include mq(mobileLandscape) {
             padding: 0 20px;
@@ -15,7 +15,7 @@
 }
 
 .march-related__title {
-    color: $c-orange;
+    color: $c-blue;
     font-size: 24px;
     font-family: 'Guardian Egyptian Web';
     font-weight: 700;
@@ -87,7 +87,7 @@
         text-decoration: none;
 
         span {
-            color: darken($c-orange, 5%);
+            color: darken($c-blue, 5%);
         }
     }
 
@@ -102,7 +102,7 @@
         width: 40px;
         height: 40px;
         border-radius: 20px;
-        background-color: $c-orange;
+        background-color: $c-blue;
         background-image: url('@@assetPath@@/assets/images/arrow-right.svg');
         background-repeat: no-repeat;
         background-position: center center;
@@ -110,11 +110,11 @@
     }
 
     a:hover:after {
-        background-color: darken($c-orange, 5%);
+        background-color: darken($c-blue, 5%);
     }
 
     span {
-        color: $c-orange;
+        color: $c-blue;
         display: block;
     }
 }
@@ -125,7 +125,7 @@
     font-family: 'Guardian Sans Web';
     font-size: 16px;
     color: $c-black;
-    background-color: $c-orange;
+    background-color: $c-blue;
     background-image: url('@@assetPath@@/assets/images/arrow-right.svg');
     background-repeat: no-repeat;
     background-position: right 2px center;
@@ -137,7 +137,7 @@
 
     &:hover {
         text-decoration: none;
-        background-color: darken($c-orange, 5%);
+        background-color: darken($c-blue, 5%);
     }
 }
 
