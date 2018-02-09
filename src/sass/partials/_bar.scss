@@ -36,6 +36,7 @@
 .march-bar__label {
     margin-right: 8px;
     display: none;
+    color: $c-white;
 
     @include mq(desktop) {
         display: block;
@@ -51,7 +52,7 @@
     background-color: $c-off-white;
     flex-grow: 1;
     display: none;
-    text-align: right;
+    text-align: left;
 
     @include mq(phablet) {
         display: block;
@@ -69,11 +70,11 @@
 .march-bar__print-button {
     font-family: 'Guardian Sans Web';
     font-size: 16px;
-    color: $c-blue;
-    background-color: $c-black;
-    background-image: url('@@assetPath@@/assets/images/arrow-right-orange.svg');
+    color: $c-black;
+    background-color: $c-yellow;
+    background-image: url('@@assetPath@@/assets/images/arrow-right.svg');
     background-repeat: no-repeat;
-    background-position: right center;
+    background-position: right 2px center;
     border-radius: 19px;
     padding: 8px 29px 8px 8px;
     display: inline-block;
@@ -82,21 +83,18 @@
     position: absolute;
     right: 0;
     opacity: 0;
-    transition: 0.2s ease-out opacity;
+    transition: 0.2s ease-out background;
 
     @include mq(mobileLandscape) {
         padding: 8px 32px 8px 12px;
         background-position: right 2px center;
-    }
-
-
-    @include mq(mobileLandscape) {
         margin-right: 20px;
     }
 
     &:hover {
         text-decoration: none;
-        background-color: darken($c-black, 5%);
+        background-color: darken($c-yellow, 5%);
+        background-position: right center;
     }
 
     &.is-printable {
