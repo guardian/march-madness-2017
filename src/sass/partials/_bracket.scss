@@ -1,5 +1,5 @@
 .march-bracket {
-    background-color: lighten($c-black, 70%);
+    background-color: lighten($c-blue, 55%);
 
     .march-round {
         position: relative;
@@ -29,8 +29,6 @@
     }
 
     .march-round--second {
-        background-color: lighten($c-black, 73%);
-
         .march-bracket__matchup {
             margin: 51px 0;
         }
@@ -51,8 +49,6 @@
     }
 
     .march-round--regional-semis {
-        background-color: lighten($c-black, 76%);
-
         .march-bracket__matchup {
             margin: 128px 0;
         }
@@ -73,8 +69,6 @@
     }
 
     .march-round--regional-finals {
-        background-color: lighten($c-black, 79%);
-
         &:after {
             content: '';
             position: absolute;
@@ -333,8 +327,6 @@
 }
 
 .march-bracket--middle {
-    background-color: $c-white;
-
     .march-round-label {
         position: absolute;
         left: 10px;
@@ -394,18 +386,19 @@
     .march-bracket__final-four-button {
         font-size: 14px;
         font-family: 'Guardian Sans Web';
-        color: $c-blue;
-        background-image: url('@@assetPath@@/assets/images/arrow-right-orange.svg');
+        color: $c-black;
+        background-color: $c-yellow;
+        background-image: url('@@assetPath@@/assets/images/arrow-right.svg');
         background-position: right center;
         background-repeat: no-repeat;
         background-size: 28px;
-        padding-right: 26px;
         position: absolute;
+        padding: 5px 26px 4px 10px;
+        border-radius: 40px;
 
         &:hover {
-            color: $c-black;
+            background-color: darken($c-yellow, 5%);
             text-decoration: none;
-            background-image: url('@@assetPath@@/assets/images/arrow-right.svg');
         }
 
         &:after {

@@ -18,7 +18,7 @@ module.exports =  {
         }.bind(this));
 
         $('.march-bracket__final-four-button').click(function(element) {
-            this.selectTab($('.march-tabs__option[data-region="' + $(element.currentTarget).data('tab') + '"]'))
+            this.selectTab(element.currentTarget)
         }.bind(this));
 
         $(window).scroll(function() {
@@ -35,9 +35,11 @@ module.exports =  {
     },
 
     selectTab: function(element) {
+        console.log(element)
         var selectedTab = $(element).attr('data-region');
+        console.log(selectedTab);
         $('.march-tabs .is-selected').removeClass('is-selected');
-        $(element).addClass('is-selected');
+        $('.march-tabs__option[data-region="' + selectedTab + '"]').addClass('is-selected');
 
         $('.march').removeClass().addClass('march march--' + selectedTab);
         $('.march-scroll').scrollLeft(0);

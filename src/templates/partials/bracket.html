@@ -55,10 +55,10 @@
 <div class='march-bracket march-bracket--middle'>
     <div class='gs-container'>
         <span class='march-round-label'><strong>Final Four</strong>April 1-3</span>
-        <a data-tab='{{ regions.[0].region }}' class='march-bracket__final-four-button march-bracket__final-four-button--1'>{{ regions.[0].region }} Regional</a>
-        <a data-tab='{{ regions.[1].region }}' class='march-bracket__final-four-button march-bracket__final-four-button--2'>{{ regions.[1].region }} Regional</a>
-        <a data-tab='{{ regions.[2].region }}' class='march-bracket__final-four-button march-bracket__final-four-button--3'>{{ regions.[2].region }} Regional</a>
-        <a data-tab='{{ regions.[3].region }}' class='march-bracket__final-four-button march-bracket__final-four-button--4'>{{ regions.[3].region }} Regional</a>
+        <a data-region='1' class='march-bracket__final-four-button march-bracket__final-four-button--1'>{{ regions.[0].region }} Regional</a>
+        <a data-region='2' class='march-bracket__final-four-button march-bracket__final-four-button--2'>{{ regions.[1].region }} Regional</a>
+        <a data-region='3' class='march-bracket__final-four-button march-bracket__final-four-button--3'>{{ regions.[2].region }} Regional</a>
+        <a data-region='4' class='march-bracket__final-four-button march-bracket__final-four-button--4'>{{ regions.[3].region }} Regional</a>
         <div class='march-round march-round--semis' data-round='5' data-region='1 2'>
             {{#loop 0 1 1}}
                 {{> templates/partials/matchup index=@index}}
