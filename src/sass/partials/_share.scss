@@ -5,7 +5,7 @@
     overflow: hidden;
 
     .svg {
-        fill: $c-blue;
+        fill: $c-black;
         width: 100%;
         height: 100%;
         margin: auto;
@@ -18,14 +18,10 @@
     border-radius: 20px;
     float: left;
     margin-right: 4px;
-    border: 1px solid $c-dark-grey;
+    background-color: $c-yellow;
+    transition: 0.2s ease-out background;
 
     &:hover {
-        border-color: $c-blue;
-        background-color: $c-blue;
-
-        .svg {
-            fill: $c-white;
-        }
+        background-color: darken($c-yellow, 5%);
     }
 }
