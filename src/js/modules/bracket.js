@@ -92,7 +92,7 @@ module.exports =  {
     stopProgress: function(team, isDirect) {
         var round = $(team).parent().parent().data('round'),
             teamName = $(team).attr('data-team');
-        round = isDirect ? round : round + 1;
+            round = isDirect ? round : round + 1;
 
         for (var i = 7; i >= round; i--) {
             if (i === 1) {
