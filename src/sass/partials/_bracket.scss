@@ -490,10 +490,13 @@
     z-index: 10;
     font-family: 'Guardian Egyptian Web';
     font-size: 38px;
+    line-height: 1.1;
     font-weight: 900;
-    width: 160px;
     text-align: center;
     display: none;
+    color: $c-white;
+    background: linear-gradient(#0184c7, #0184c7) no-repeat;
+    box-shadow: 6px 0 0 #0184c7, -6px 0 0 #0184c7;
 
     @include mq(desktop) {
         left: 175px;
