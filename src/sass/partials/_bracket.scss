@@ -329,9 +329,10 @@
         position: absolute;
         left: 10px;
         top: 6px;
-        font-family: 'Guardian Sans Web';
+        font-family: 'Guardian Egyptian Web';
         font-size: 14px;
         line-height: 20px;
+        font-weight: bold;
 
         @include mq(mobileLandscape) {
             left: 20px;
@@ -343,6 +344,7 @@
 
         strong {
             display: block;
+            color: $c-blue;
         }
     }
 
