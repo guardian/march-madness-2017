@@ -1,6 +1,6 @@
 .march-header {
     position: relative;
-    background-color: $c-black;
+    background-color: $c-off-white;
     background-image: url('@@assetPath@@/assets/images/background.png');
     background-position: center top;
     overflow: hidden;
@@ -12,14 +12,14 @@
 
 .march-header__content {
     position: relative;
-    padding: 0 10px;
-    height: 520px;
+    padding: 12px 10px 0;
+    height: 460px;
     z-index: 2;
     width: 100%;
     box-sizing: border-box;
 
     @include mq(mobileLandscape) {
-        padding: 0 20px;
+        padding: 12px 20px 0;
         height: 400px;
     }
 
@@ -48,11 +48,13 @@
 .march-header__title {
     font-family: 'Guardian Egyptian Web';
     font-weight: 900;
-    color: $c-orange;
-    font-size: 3spx;
-    line-height: 1;
-    padding-top: 12px;
+    color: $c-white;
+    font-size: 30px;
+    line-height: 1.2;
     margin: 0;
+    display: inline;
+    background: linear-gradient($c-blue, $c-blue) no-repeat;
+    box-shadow: 6px 0 0 $c-blue, -6px 0 0 $c-blue;
 
     @include mq(tablet) {
         font-size: 56px;
@@ -60,7 +62,28 @@
     }
 
     @include mq(desktop) {
-        font-size: 72px;
+        font-size: 58px;
+    }
+}
+
+.march-header__sub {
+    font-family: 'Guardian Egyptian Web';
+    font-weight: 900;
+    color: $c-black;
+    font-size: 22px;
+    line-height: 1.4;
+    margin: 0;
+    display: inline;
+    background: linear-gradient($c-yellow, $c-yellow) no-repeat;
+    box-shadow: 6px 0 0 $c-yellow, -6px 0 0 $c-yellow;
+
+    @include mq(tablet) {
+        font-size: 26px;
+        width: calc(100% + 100px);
+    }
+
+    @include mq(desktop) {
+        font-size: 38px;
     }
 }
 
@@ -81,7 +104,7 @@
     font-family: 'Guardian Egyptian Web';
     font-size: 14px;
     line-height: 18px;
-    color: $c-white;
+    color: $c-black;
     margin-bottom: 12px;
     padding-right: 100px;
 
@@ -100,13 +123,13 @@
     }
 
     a {
-        color: $c-orange;
+        color: $c-blue;
         border-bottom: $c-white 1px solid;
         text-decoration: none;
 
         &:hover {
             text-decoration: none;
-            border-bottom-color: $c-orange;
+            border-bottom-color: $c-blue;
         }
     }
 }
@@ -117,18 +140,18 @@
     font-family: 'Guardian Sans Web';
     font-size: 16px;
     color: $c-black;
-    background-color: $c-orange;
+    background-color: $c-yellow;
     background-image: url('@@assetPath@@/assets/images/arrow-right.svg');
     background-repeat: no-repeat;
     background-position: right center;
-    border-radius: 19px;
+    border-radius: 22px;
     padding: 8px 29px 8px 8px;
     display: inline-block;
     opacity: 0;
-    transition: 0.2s ease-out opacity;
+    transition: 0.2s ease-out opacity, 0.2s ease-out background;
 
     @include mq(mobileLandscape) {
-        padding: 8px 32px 8px 12px;
+        padding: 9px 44px 9px 13px;
         background-position: right 2px center;
     }
 
@@ -141,7 +164,8 @@
 
     &:hover {
         text-decoration: none;
-        background-color: darken($c-orange, 5%);
+        background-color: darken($c-yellow, 5%);
+        background-position: right center;
     }
 
     &.is-printable {
@@ -193,7 +217,7 @@
     }
 
     @include mq(desktop) {
-        right: -370px;
+        right: -400px;
     }
 
     &--2 {
@@ -202,6 +226,27 @@
 
     &--3 {
         animation-delay: 12s;
+    }
+}
+
+.march-header__circle {
+    position: absolute;
+    bottom: -13%;
+    right: -90px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: $c-blue;
+
+    @include mq(tablet) {
+        right: -260px;
+    }
+
+    @include mq(desktop) {
+        bottom: -31%;
+        right: -550px;
+        width: 500px;
+        height: 500px;
     }
 }
 

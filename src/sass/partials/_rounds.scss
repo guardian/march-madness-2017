@@ -4,10 +4,15 @@
     padding: 0;
     background-color: $c-black;
     color: $c-white;
-    font-family: 'Guardian Sans Web';
+    font-family: 'Guardian Egyptian Web';
+    font-weight: 900;
     font-size: 14px;
     line-height: 20px;
     overflow: auto;
+
+    strong {
+        color: $c-yellow;
+    }
 
     @include mq(desktop) {
         font-size: 16px;

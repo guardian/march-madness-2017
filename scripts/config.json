@@ -5,7 +5,7 @@
     },
     "remote": {
         "url": "https://interactive.guim.co.uk",
-        "path": "atoms/2017/03/march-madness",
+        "path": "atoms/2018/03/march-madness",
         "bucket": "gdn-cdn"
     }
 }
