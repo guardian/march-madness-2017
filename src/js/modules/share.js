@@ -1,7 +1,7 @@
 var $ = require('../vendor/jquery.js');
 
 var pageUrl = window.location.href.split('#')[0],
-    title = 'March madness 2017 bracket',
+    title = 'March madness 2018 bracket',
     id;
 
 module.exports =  {
