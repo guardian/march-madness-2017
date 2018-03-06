@@ -156,6 +156,7 @@
     }
 
     @include mq($until: phablet) {
+        display: none;
         position: absolute;
         bottom: 12px;
         left: 10px;
@@ -265,6 +266,7 @@
             bottom: 12px;
             right: 10px;
             z-index: 2;
+            display: none;
         }
     }
 }
