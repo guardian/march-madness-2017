@@ -156,6 +156,7 @@
     }
 
     @include mq($until: phablet) {
+        display: none;
         position: absolute;
         bottom: 12px;
         left: 10px;
@@ -220,6 +221,12 @@
         right: -400px;
     }
 
+    &--1 {
+        @include mq(tablet) {
+            bottom: -40px;
+        }
+    }
+
     &--2 {
         animation-delay: 6s;
     }
@@ -259,6 +266,7 @@
             bottom: 12px;
             right: 10px;
             z-index: 2;
+            display: none;
         }
     }
 }

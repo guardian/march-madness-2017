@@ -13,6 +13,10 @@
     transform: translateY(56px);
     transition: transform 0.3s ease-in;
 
+    @include mq($until: phablet) {
+        transform: translateY(0px);
+    }
+
     &.is-visible {
         transform: translateY(0px);
     }
