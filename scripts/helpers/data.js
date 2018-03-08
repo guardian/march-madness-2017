@@ -14,6 +14,10 @@ function breakDoubleTeams() {
 function createImageNames() {
     for (var i = 0; i < json.length; i++) {
         json[i].Logo = json[i].Team.replace(/ /g, '-').replace('\'', '').toLowerCase();
+
+        if (json[i].Logo === 'tennessee') {
+            json[i].Logo = 'tennessee-womens';
+        }
     }
 }
 
