@@ -221,12 +221,6 @@
         right: -400px;
     }
 
-    &--1 {
-        @include mq(tablet) {
-            bottom: -40px;
-        }
-    }
-
     &--2 {
         animation-delay: 6s;
     }
