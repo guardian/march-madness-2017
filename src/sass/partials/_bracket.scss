@@ -499,6 +499,8 @@
     color: $c-white;
     background: linear-gradient(#0184c7, #0184c7) no-repeat;
     box-shadow: 6px 0 0 #0184c7, -6px 0 0 #0184c7;
+    padding-bottom: 6px;
+    padding-top: 2px;
 
     @include mq(desktop) {
         left: 175px;
