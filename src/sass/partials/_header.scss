@@ -66,6 +66,28 @@
     }
 }
 
+.march-header__label {
+    font-family: 'Guardian Egyptian Web';
+    font-weight: 900;
+    font-style: italic;
+    color: $c-yellow;
+    font-size: 16px;
+    line-height: 1.4;
+    margin: 0;
+    display: inline;
+    background: linear-gradient($c-black, $c-black) no-repeat;
+    box-shadow: 6px 0 0 $c-black, -6px 0 0 $c-black;
+
+    @include mq(tablet) {
+        font-size: 20px;
+        width: calc(100% + 100px);
+    }
+
+    @include mq(desktop) {
+        font-size: 24px;
+    }
+}
+
 .march-header__sub {
     font-family: 'Guardian Egyptian Web';
     font-weight: 900;
